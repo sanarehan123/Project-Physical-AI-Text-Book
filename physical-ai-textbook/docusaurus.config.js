@@ -20,20 +20,24 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://panaversity.github.io',
+  url: 'https://physical-ai-textbook.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/physical-ai-textbook/',
+  // For Vercel deployment, use '/' for root, or adjust as needed
+  baseUrl: '/',
 
-  // GitHub pages deployment config.
+  // For GitHub pages deployment only.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'panaversity', // Usually your GitHub org/user name.
+  organizationName: 'sanarehan123', // Usually your GitHub org/user name.
   projectName: 'physical-ai-textbook', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   markdown: {
     mermaid: true,
+    mdx1Compat: {
+      admonitions: true,
+      headingIds: true,
+    },
   },
 
   // Even if you don't use internationalization, you can use this field to set
@@ -54,7 +58,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/panaversity/physical-ai-textbook/edit/main/',
+            'https://github.com/sanarehan123/physical-ai-textbook/edit/main/',
           routeBasePath: '/', // Serve docs at site root
         },
         blog: false, // Disable blog for textbook
@@ -87,7 +91,7 @@ const config = {
             label: 'Textbook',
           },
           {
-            href: 'https://github.com/physical-ai-textbook/book',
+            href: 'https://github.com/sanarehan123/physical-ai-textbook',
             label: 'GitHub',
             position: 'right',
           },
@@ -139,7 +143,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/physical-ai-textbook/book',
+                href: 'https://github.com/sanarehan123/physical-ai-textbook',
               },
             ],
           },
