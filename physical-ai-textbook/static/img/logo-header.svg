@@ -1,0 +1,63 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff"/>
+      <stop offset="100%" stop-color="#00aaff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main logo group -->
+  <g transform="translate(20, 20)">
+    <!-- Neural network brain on left -->
+    <g>
+      <!-- Brain outline -->
+      <path d="M20 20 Q20 5 50 5 Q80 5 80 20 Q80 35 50 45 Q20 35 20 20" fill="none" stroke="white" stroke-width="2"/>
+
+      <!-- Neural connections -->
+      <line x1="30" y1="15" x2="40" y2="12" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="40" y1="12" x2="50" y2="18" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="50" y1="18" x2="60" y2="15" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="35" y1="25" x2="45" y2="22" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="45" y1="22" x2="55" y2="28" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="55" y1="28" x2="65" y2="25" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="30" y1="30" x2="40" y2="35" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="40" y1="35" x2="50" y2="32" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+      <line x1="50" y1="32" x2="60" y2="38" stroke="url(#neuralGradient)" stroke-width="1.5"/>
+    </g>
+
+    <!-- Connecting lines to robot body -->
+    <line x1="80" y1="25" x2="110" y2="25" stroke="white" stroke-width="2" stroke-dasharray="3,2"/>
+
+    <!-- Humanoid robot body -->
+    <g transform="translate(110, 0)">
+      <!-- Head -->
+      <circle cx="20" cy="15" r="8" fill="none" stroke="white" stroke-width="2"/>
+
+      <!-- Eyes (sensors) -->
+      <circle cx="16" cy="13" r="1.5" fill="url(#neuralGradient)"/>
+      <circle cx="24" cy="13" r="1.5" fill="url(#neuralGradient)"/>
+
+      <!-- Body -->
+      <rect x="12" y="23" width="16" height="25" fill="none" stroke="white" stroke-width="2"/>
+
+      <!-- Arms -->
+      <line x1="8" y1="30" x2="12" y2="30" stroke="white" stroke-width="2"/>
+      <line x1="28" y1="30" x2="32" y2="30" stroke="white" stroke-width="2"/>
+
+      <!-- Legs -->
+      <line x1="16" y1="48" x2="16" y2="65" stroke="white" stroke-width="2"/>
+      <line x1="24" y1="48" x2="24" y2="65" stroke="white" stroke-width="2"/>
+
+      <!-- Joints - circuit patterns -->
+      <circle cx="12" cy="30" r="2" fill="none" stroke="url(#neuralGradient)" stroke-width="1"/>
+      <circle cx="28" cy="30" r="2" fill="none" stroke="url(#neuralGradient)" stroke-width="1"/>
+      <circle cx="16" cy="48" r="2" fill="none" stroke="url(#neuralGradient)" stroke-width="1"/>
+      <circle cx="24" cy="48" r="2" fill="none" stroke="url(#neuralGradient)" stroke-width="1"/>
+    </g>
+
+    <!-- Title text -->
+    <text x="160" y="50" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+      Physical AI &amp; Humanoid Robotics
+    </text>
+  </g>
+</svg>

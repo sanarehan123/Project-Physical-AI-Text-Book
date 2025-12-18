@@ -1,0 +1,506 @@
+# Implementation Tasks: Physical AI & Humanoid Robotics Textbook
+
+**Feature**: `001-physical-ai-textbook` | **Date**: 2025-12-17 | **Spec**: [spec.md](./spec.md)
+
+## Phase 1: Setup Tasks
+
+- [ ] T001 Initialize GitHub repository with proper structure and gitignore
+- [ ] T002 Set up branch strategy (main, develop, content branches)
+- [ ] T003 Integrate Spec-Kit Plus folder structure in project
+- [ ] T004 Configure Claude Code working directories and settings
+- [ ] T005 Install Node.js LTS (v18+) and npm package manager
+- [ ] T006 Install Python 3.8+ for ROS 2 development requirements
+
+## Phase 2: Docusaurus Foundation Tasks
+
+- [ ] T007 Bootstrap Docusaurus v3+ project with TypeScript configuration
+- [ ] T008 Configure site metadata (title, tagline, navbar, footer) for textbook
+- [ ] T009 Set up sidebar configuration for 4 modules → 16 chapters structure
+- [ ] T010 Configure MDX support and documentation routing
+- [ ] T011 Set up search functionality (local or Algolia-ready configuration)
+- [ ] T012 Configure GitHub Pages deployment settings
+- [ ] T013 Set up GitHub Actions CI/CD workflow for automated deployment
+- [ ] T014 Configure citation handling for APA format in Markdown
+- [ ] T015 Set up image, diagram, and asset handling pipeline
+- [ ] T016 Configure code block and math rendering capabilities
+- [ ] T017 Create AI-native callout/admonition styles for tutor prompts
+
+## Phase 3: User Story 1 - Student Learns Physical AI Fundamentals (P1)
+
+- [ ] T018 [US1] Create Module 1 index file (docs/module-1/index.mdx)
+- [ ] T019 [US1] Create Chapter 1 spec file for Introduction to Physical AI
+- [ ] T020 [US1] Define learning objectives for Chapter 1 content
+- [ ] T021 [US1] Identify required diagrams/simulations for Chapter 1
+- [ ] T022 [US1] Source identification (peer-reviewed + industry) for Chapter 1
+- [ ] T023 [US1] Decide AI-agent interactions for Chapter 1
+- [ ] T024 [US1] Collect and log sources with APA metadata for Chapter 1
+- [ ] T025 [US1] Draft conceptual explanations for Chapter 1
+- [ ] T026 [US1] Insert citations inline for Chapter 1
+- [ ] T027 [US1] Validate factual claims for Chapter 1
+- [ ] T028 [US1] Create introduction and motivation section for Chapter 1
+- [ ] T029 [US1] Create core concepts and systems section for Chapter 1
+- [ ] T030 [US1] Create robotics/AI integration narrative for Chapter 1
+- [ ] T031 [US1] Create case studies or real-world systems for Chapter 1
+- [ ] T032 [US1] Create summary and reflection prompts for Chapter 1
+- [ ] T033 [US1] Create AI tutor prompts for Chapter 1
+- [ ] T034 [US1] Create self-assessment questions for Chapter 1
+- [ ] T035 [US1] Create agent-driven exploration tasks for Chapter 1
+- [ ] T036 [US1] Create "Ask the Robot" or "Simulate This" prompts for Chapter 1
+- [ ] T037 [US1] Fact-check Chapter 1 content against sources
+- [ ] T038 [US1] Perform citation completeness check for Chapter 1
+- [ ] T039 [US1] Perform plagiarism self-check for Chapter 1
+- [ ] T040 [US1] Perform readability check (target grade 10–12) for Chapter 1
+- [ ] T041 [US1] Convert Chapter 1 to MDX format
+- [ ] T042 [US1] Link Chapter 1 into sidebar navigation
+- [ ] T043 [US1] Verify navigation functionality for Chapter 1
+- [ ] T044 [US1] Build and preview site with Chapter 1
+- [ ] T045 [US1] Create Chapter 2 spec file for Humanoid Robotics Landscape
+- [ ] T046 [US1] Define learning objectives for Chapter 2 content
+- [ ] T047 [US1] Identify required diagrams/simulations for Chapter 2
+- [ ] T048 [US1] Source identification (peer-reviewed + industry) for Chapter 2
+- [ ] T049 [US1] Decide AI-agent interactions for Chapter 2
+- [ ] T050 [US1] Collect and log sources with APA metadata for Chapter 2
+- [ ] T051 [US1] Draft conceptual explanations for Chapter 2
+- [ ] T052 [US1] Insert citations inline for Chapter 2
+- [ ] T053 [US1] Validate factual claims for Chapter 2
+- [ ] T054 [US1] Create introduction and motivation section for Chapter 2
+- [ ] T055 [US1] Create core concepts and systems section for Chapter 2
+- [ ] T056 [US1] Create robotics/AI integration narrative for Chapter 2
+- [ ] T057 [US1] Create case studies or real-world systems for Chapter 2
+- [ ] T058 [US1] Create summary and reflection prompts for Chapter 2
+- [ ] T059 [US1] Create AI tutor prompts for Chapter 2
+- [ ] T060 [US1] Create self-assessment questions for Chapter 2
+- [ ] T061 [US1] Create agent-driven exploration tasks for Chapter 2
+- [ ] T062 [US1] Create "Ask the Robot" or "Simulate This" prompts for Chapter 2
+- [ ] T063 [US1] Fact-check Chapter 2 content against sources
+- [ ] T064 [US1] Perform citation completeness check for Chapter 2
+- [ ] T065 [US1] Perform plagiarism self-check for Chapter 2
+- [ ] T066 [US1] Perform readability check (target grade 10–12) for Chapter 2
+- [ ] T067 [US1] Convert Chapter 2 to MDX format
+- [ ] T068 [US1] Link Chapter 2 into sidebar navigation
+- [ ] T069 [US1] Verify navigation functionality for Chapter 2
+- [ ] T070 [US1] Build and preview site with Chapter 2
+- [ ] T071 [US1] Create Chapter 3 spec file for Sensors as Perception Organs
+- [ ] T072 [US1] Define learning objectives for Chapter 3 content
+- [ ] T073 [US1] Identify required diagrams/simulations for Chapter 3
+- [ ] T074 [US1] Source identification (peer-reviewed + industry) for Chapter 3
+- [ ] T075 [US1] Decide AI-agent interactions for Chapter 3
+- [ ] T076 [US1] Collect and log sources with APA metadata for Chapter 3
+- [ ] T077 [US1] Draft conceptual explanations for Chapter 3
+- [ ] T078 [US1] Insert citations inline for Chapter 3
+- [ ] T079 [US1] Validate factual claims for Chapter 3
+- [ ] T080 [US1] Create introduction and motivation section for Chapter 3
+- [ ] T081 [US1] Create core concepts and systems section for Chapter 3
+- [ ] T082 [US1] Create robotics/AI integration narrative for Chapter 3
+- [ ] T083 [US1] Create case studies or real-world systems for Chapter 3
+- [ ] T084 [US1] Create summary and reflection prompts for Chapter 3
+- [ ] T085 [US1] Create AI tutor prompts for Chapter 3
+- [ ] T086 [US1] Create self-assessment questions for Chapter 3
+- [ ] T087 [US1] Create agent-driven exploration tasks for Chapter 3
+- [ ] T088 [US1] Create "Ask the Robot" or "Simulate This" prompts for Chapter 3
+- [ ] T089 [US1] Fact-check Chapter 3 content against sources
+- [ ] T090 [US1] Perform citation completeness check for Chapter 3
+- [ ] T091 [US1] Perform plagiarism self-check for Chapter 3
+- [ ] T092 [US1] Perform readability check (target grade 10–12) for Chapter 3
+- [ ] T093 [US1] Convert Chapter 3 to MDX format
+- [ ] T094 [US1] Link Chapter 3 into sidebar navigation
+- [ ] T095 [US1] Verify navigation functionality for Chapter 3
+- [ ] T096 [US1] Build and preview site with Chapter 3
+- [ ] T097 [US1] Create Chapter 4 spec file for Physical Constraints & Reality Gaps
+- [ ] T098 [US1] Define learning objectives for Chapter 4 content
+- [ ] T099 [US1] Identify required diagrams/simulations for Chapter 4
+- [ ] T100 [US1] Source identification (peer-reviewed + industry) for Chapter 4
+- [ ] T101 [US1] Decide AI-agent interactions for Chapter 4
+- [ ] T102 [US1] Collect and log sources with APA metadata for Chapter 4
+- [ ] T103 [US1] Draft conceptual explanations for Chapter 4
+- [ ] T104 [US1] Insert citations inline for Chapter 4
+- [ ] T105 [US1] Validate factual claims for Chapter 4
+- [ ] T106 [US1] Create introduction and motivation section for Chapter 4
+- [ ] T107 [US1] Create core concepts and systems section for Chapter 4
+- [ ] T108 [US1] Create robotics/AI integration narrative for Chapter 4
+- [ ] T109 [US1] Create case studies or real-world systems for Chapter 4
+- [ ] T110 [US1] Create summary and reflection prompts for Chapter 4
+- [ ] T111 [US1] Create AI tutor prompts for Chapter 4
+- [ ] T112 [US1] Create self-assessment questions for Chapter 4
+- [ ] T113 [US1] Create agent-driven exploration tasks for Chapter 4
+- [ ] T114 [US1] Create "Ask the Robot" or "Simulate This" prompts for Chapter 4
+- [ ] T115 [US1] Fact-check Chapter 4 content against sources
+- [ ] T116 [US1] Perform citation completeness check for Chapter 4
+- [ ] T117 [US1] Perform plagiarism self-check for Chapter 4
+- [ ] T118 [US1] Perform readability check (target grade 10–12) for Chapter 4
+- [ ] T119 [US1] Convert Chapter 4 to MDX format
+- [ ] T120 [US1] Link Chapter 4 into sidebar navigation
+- [ ] T121 [US1] Verify navigation functionality for Chapter 4
+- [ ] T122 [US1] Build and preview site with Chapter 4
+- [ ] T123 [US1] Cross-chapter consistency review for Module 1
+- [ ] T124 [US1] Merge Module 1 to main branch
+
+## Phase 4: User Story 2 - Student Works with ROS 2 Robotics Middleware (P2)
+
+- [ ] T125 [US2] Create Module 2 index file (docs/module-2/index.mdx)
+- [ ] T126 [US2] Create Chapter 5 spec file for ROS 2 Architecture
+- [ ] T127 [US2] Define learning objectives for Chapter 5 content
+- [ ] T128 [US2] Identify required diagrams/simulations for Chapter 5
+- [ ] T129 [US2] Source identification (peer-reviewed + industry) for Chapter 5
+- [ ] T130 [US2] Decide AI-agent interactions for Chapter 5
+- [ ] T131 [US2] Collect and log sources with APA metadata for Chapter 5
+- [ ] T132 [US2] Draft conceptual explanations for Chapter 5
+- [ ] T133 [US2] Insert citations inline for Chapter 5
+- [ ] T134 [US2] Validate factual claims for Chapter 5
+- [ ] T135 [US2] Create introduction and motivation section for Chapter 5
+- [ ] T136 [US2] Create core concepts and systems section for Chapter 5
+- [ ] T137 [US2] Create robotics/AI integration narrative for Chapter 5
+- [ ] T138 [US2] Create case studies or real-world systems for Chapter 5
+- [ ] T139 [US2] Create summary and reflection prompts for Chapter 5
+- [ ] T140 [US2] Create AI tutor prompts for Chapter 5
+- [ ] T141 [US2] Create self-assessment questions for Chapter 5
+- [ ] T142 [US2] Create agent-driven exploration tasks for Chapter 5
+- [ ] T143 [US2] Create "Ask the Robot" or "Simulate This" prompts for Chapter 5
+- [ ] T144 [US2] Fact-check Chapter 5 content against sources
+- [ ] T145 [US2] Perform citation completeness check for Chapter 5
+- [ ] T146 [US2] Perform plagiarism self-check for Chapter 5
+- [ ] T147 [US2] Perform readability check (target grade 10–12) for Chapter 5
+- [ ] T148 [US2] Convert Chapter 5 to MDX format
+- [ ] T149 [US2] Link Chapter 5 into sidebar navigation
+- [ ] T150 [US2] Verify navigation functionality for Chapter 5
+- [ ] T151 [US2] Build and preview site with Chapter 5
+- [ ] T152 [US2] Create Chapter 6 spec file for Python Agents with ROS 2
+- [ ] T153 [US2] Define learning objectives for Chapter 6 content
+- [ ] T154 [US2] Identify required diagrams/simulations for Chapter 6
+- [ ] T155 [US2] Source identification (peer-reviewed + industry) for Chapter 6
+- [ ] T156 [US2] Decide AI-agent interactions for Chapter 6
+- [ ] T157 [US2] Collect and log sources with APA metadata for Chapter 6
+- [ ] T158 [US2] Draft conceptual explanations for Chapter 6
+- [ ] T159 [US2] Insert citations inline for Chapter 6
+- [ ] T160 [US2] Validate factual claims for Chapter 6
+- [ ] T161 [US2] Create introduction and motivation section for Chapter 6
+- [ ] T162 [US2] Create core concepts and systems section for Chapter 6
+- [ ] T163 [US2] Create robotics/AI integration narrative for Chapter 6
+- [ ] T164 [US2] Create case studies or real-world systems for Chapter 6
+- [ ] T165 [US2] Create summary and reflection prompts for Chapter 6
+- [ ] T166 [US2] Create AI tutor prompts for Chapter 6
+- [ ] T167 [US2] Create self-assessment questions for Chapter 6
+- [ ] T168 [US2] Create agent-driven exploration tasks for Chapter 6
+- [ ] T169 [US2] Create "Ask the Robot" or "Simulate This" prompts for Chapter 6
+- [ ] T170 [US2] Fact-check Chapter 6 content against sources
+- [ ] T171 [US2] Perform citation completeness check for Chapter 6
+- [ ] T172 [US2] Perform plagiarism self-check for Chapter 6
+- [ ] T173 [US2] Perform readability check (target grade 10–12) for Chapter 6
+- [ ] T174 [US2] Convert Chapter 6 to MDX format
+- [ ] T175 [US2] Link Chapter 6 into sidebar navigation
+- [ ] T176 [US2] Verify navigation functionality for Chapter 6
+- [ ] T177 [US2] Build and preview site with Chapter 6
+- [ ] T178 [US2] Create Chapter 7 spec file for Robot Description & URDF
+- [ ] T179 [US2] Define learning objectives for Chapter 7 content
+- [ ] T180 [US2] Identify required diagrams/simulations for Chapter 7
+- [ ] T181 [US2] Source identification (peer-reviewed + industry) for Chapter 7
+- [ ] T182 [US2] Decide AI-agent interactions for Chapter 7
+- [ ] T183 [US2] Collect and log sources with APA metadata for Chapter 7
+- [ ] T184 [US2] Draft conceptual explanations for Chapter 7
+- [ ] T185 [US2] Insert citations inline for Chapter 7
+- [ ] T186 [US2] Validate factual claims for Chapter 7
+- [ ] T187 [US2] Create introduction and motivation section for Chapter 7
+- [ ] T188 [US2] Create core concepts and systems section for Chapter 7
+- [ ] T189 [US2] Create robotics/AI integration narrative for Chapter 7
+- [ ] T190 [US2] Create case studies or real-world systems for Chapter 7
+- [ ] T191 [US2] Create summary and reflection prompts for Chapter 7
+- [ ] T192 [US2] Create AI tutor prompts for Chapter 7
+- [ ] T193 [US2] Create self-assessment questions for Chapter 7
+- [ ] T194 [US2] Create agent-driven exploration tasks for Chapter 7
+- [ ] T195 [US2] Create "Ask the Robot" or "Simulate This" prompts for Chapter 7
+- [ ] T196 [US2] Fact-check Chapter 7 content against sources
+- [ ] T197 [US2] Perform citation completeness check for Chapter 7
+- [ ] T198 [US2] Perform plagiarism self-check for Chapter 7
+- [ ] T199 [US2] Perform readability check (target grade 10–12) for Chapter 7
+- [ ] T200 [US2] Convert Chapter 7 to MDX format
+- [ ] T201 [US2] Link Chapter 7 into sidebar navigation
+- [ ] T202 [US2] Verify navigation functionality for Chapter 7
+- [ ] T203 [US2] Build and preview site with Chapter 7
+- [ ] T204 [US2] Create Chapter 8 spec file for ROS 2 Systems Engineering
+- [ ] T205 [US2] Define learning objectives for Chapter 8 content
+- [ ] T206 [US2] Identify required diagrams/simulations for Chapter 8
+- [ ] T207 [US2] Source identification (peer-reviewed + industry) for Chapter 8
+- [ ] T208 [US2] Decide AI-agent interactions for Chapter 8
+- [ ] T209 [US2] Collect and log sources with APA metadata for Chapter 8
+- [ ] T210 [US2] Draft conceptual explanations for Chapter 8
+- [ ] T211 [US2] Insert citations inline for Chapter 8
+- [ ] T212 [US2] Validate factual claims for Chapter 8
+- [ ] T213 [US2] Create introduction and motivation section for Chapter 8
+- [ ] T214 [US2] Create core concepts and systems section for Chapter 8
+- [ ] T215 [US2] Create robotics/AI integration narrative for Chapter 8
+- [ ] T216 [US2] Create case studies or real-world systems for Chapter 8
+- [ ] T217 [US2] Create summary and reflection prompts for Chapter 8
+- [ ] T218 [US2] Create AI tutor prompts for Chapter 8
+- [ ] T219 [US2] Create self-assessment questions for Chapter 8
+- [ ] T220 [US2] Create agent-driven exploration tasks for Chapter 8
+- [ ] T221 [US2] Create "Ask the Robot" or "Simulate This" prompts for Chapter 8
+- [ ] T222 [US2] Fact-check Chapter 8 content against sources
+- [ ] T223 [US2] Perform citation completeness check for Chapter 8
+- [ ] T224 [US2] Perform plagiarism self-check for Chapter 8
+- [ ] T225 [US2] Perform readability check (target grade 10–12) for Chapter 8
+- [ ] T226 [US2] Convert Chapter 8 to MDX format
+- [ ] T227 [US2] Link Chapter 8 into sidebar navigation
+- [ ] T228 [US2] Verify navigation functionality for Chapter 8
+- [ ] T229 [US2] Build and preview site with Chapter 8
+- [ ] T230 [US2] Cross-chapter consistency review for Module 2
+- [ ] T231 [US2] Merge Module 2 to main branch
+
+## Phase 5: User Story 3 - Student Uses Simulation for Robot Development (P3)
+
+- [ ] T232 [US3] Create Module 3 index file (docs/module-3/index.mdx)
+- [ ] T233 [US3] Create Chapter 9 spec file for Gazebo & Physics Simulation
+- [ ] T234 [US3] Define learning objectives for Chapter 9 content
+- [ ] T235 [US3] Identify required diagrams/simulations for Chapter 9
+- [ ] T236 [US3] Source identification (peer-reviewed + industry) for Chapter 9
+- [ ] T237 [US3] Decide AI-agent interactions for Chapter 9
+- [ ] T238 [US3] Collect and log sources with APA metadata for Chapter 9
+- [ ] T239 [US3] Draft conceptual explanations for Chapter 9
+- [ ] T240 [US3] Insert citations inline for Chapter 9
+- [ ] T241 [US3] Validate factual claims for Chapter 9
+- [ ] T242 [US3] Create introduction and motivation section for Chapter 9
+- [ ] T243 [US3] Create core concepts and systems section for Chapter 9
+- [ ] T244 [US3] Create robotics/AI integration narrative for Chapter 9
+- [ ] T245 [US3] Create case studies or real-world systems for Chapter 9
+- [ ] T246 [US3] Create summary and reflection prompts for Chapter 9
+- [ ] T247 [US3] Create AI tutor prompts for Chapter 9
+- [ ] T248 [US3] Create self-assessment questions for Chapter 9
+- [ ] T249 [US3] Create agent-driven exploration tasks for Chapter 9
+- [ ] T250 [US3] Create "Ask the Robot" or "Simulate This" prompts for Chapter 9
+- [ ] T251 [US3] Fact-check Chapter 9 content against sources
+- [ ] T252 [US3] Perform citation completeness check for Chapter 9
+- [ ] T253 [US3] Perform plagiarism self-check for Chapter 9
+- [ ] T254 [US3] Perform readability check (target grade 10–12) for Chapter 9
+- [ ] T255 [US3] Convert Chapter 9 to MDX format
+- [ ] T256 [US3] Link Chapter 9 into sidebar navigation
+- [ ] T257 [US3] Verify navigation functionality for Chapter 9
+- [ ] T258 [US3] Build and preview site with Chapter 9
+- [ ] T259 [US3] Create Chapter 10 spec file for Unity for Human-Robot Interaction
+- [ ] T260 [US3] Define learning objectives for Chapter 10 content
+- [ ] T261 [US3] Identify required diagrams/simulations for Chapter 10
+- [ ] T262 [US3] Source identification (peer-reviewed + industry) for Chapter 10
+- [ ] T263 [US3] Decide AI-agent interactions for Chapter 10
+- [ ] T264 [US3] Collect and log sources with APA metadata for Chapter 10
+- [ ] T265 [US3] Draft conceptual explanations for Chapter 10
+- [ ] T266 [US3] Insert citations inline for Chapter 10
+- [ ] T267 [US3] Validate factual claims for Chapter 10
+- [ ] T268 [US3] Create introduction and motivation section for Chapter 10
+- [ ] T269 [US3] Create core concepts and systems section for Chapter 10
+- [ ] T270 [US3] Create robotics/AI integration narrative for Chapter 10
+- [ ] T271 [US3] Create case studies or real-world systems for Chapter 10
+- [ ] T272 [US3] Create summary and reflection prompts for Chapter 10
+- [ ] T273 [US3] Create AI tutor prompts for Chapter 10
+- [ ] T274 [US3] Create self-assessment questions for Chapter 10
+- [ ] T275 [US3] Create agent-driven exploration tasks for Chapter 10
+- [ ] T276 [US3] Create "Ask the Robot" or "Simulate This" prompts for Chapter 10
+- [ ] T277 [US3] Fact-check Chapter 10 content against sources
+- [ ] T278 [US3] Perform citation completeness check for Chapter 10
+- [ ] T279 [US3] Perform plagiarism self-check for Chapter 10
+- [ ] T280 [US3] Perform readability check (target grade 10–12) for Chapter 10
+- [ ] T281 [US3] Convert Chapter 10 to MDX format
+- [ ] T282 [US3] Link Chapter 10 into sidebar navigation
+- [ ] T283 [US3] Verify navigation functionality for Chapter 10
+- [ ] T284 [US3] Build and preview site with Chapter 10
+- [ ] T285 [US3] Create Chapter 11 spec file for NVIDIA Isaac Sim
+- [ ] T286 [US3] Define learning objectives for Chapter 11 content
+- [ ] T287 [US3] Identify required diagrams/simulations for Chapter 11
+- [ ] T288 [US3] Source identification (peer-reviewed + industry) for Chapter 11
+- [ ] T289 [US3] Decide AI-agent interactions for Chapter 11
+- [ ] T290 [US3] Collect and log sources with APA metadata for Chapter 11
+- [ ] T291 [US3] Draft conceptual explanations for Chapter 11
+- [ ] T292 [US3] Insert citations inline for Chapter 11
+- [ ] T293 [US3] Validate factual claims for Chapter 11
+- [ ] T294 [US3] Create introduction and motivation section for Chapter 11
+- [ ] T295 [US3] Create core concepts and systems section for Chapter 11
+- [ ] T296 [US3] Create robotics/AI integration narrative for Chapter 11
+- [ ] T297 [US3] Create case studies or real-world systems for Chapter 11
+- [ ] T298 [US3] Create summary and reflection prompts for Chapter 11
+- [ ] T299 [US3] Create AI tutor prompts for Chapter 11
+- [ ] T300 [US3] Create self-assessment questions for Chapter 11
+- [ ] T301 [US3] Create agent-driven exploration tasks for Chapter 11
+- [ ] T302 [US3] Create "Ask the Robot" or "Simulate This" prompts for Chapter 11
+- [ ] T303 [US3] Fact-check Chapter 11 content against sources
+- [ ] T304 [US3] Perform citation completeness check for Chapter 11
+- [ ] T305 [US3] Perform plagiarism self-check for Chapter 11
+- [ ] T306 [US3] Perform readability check (target grade 10–12) for Chapter 11
+- [ ] T307 [US3] Convert Chapter 11 to MDX format
+- [ ] T308 [US3] Link Chapter 11 into sidebar navigation
+- [ ] T309 [US3] Verify navigation functionality for Chapter 11
+- [ ] T310 [US3] Build and preview site with Chapter 11
+- [ ] T311 [US3] Create Chapter 12 spec file for Isaac ROS & Navigation
+- [ ] T312 [US3] Define learning objectives for Chapter 12 content
+- [ ] T313 [US3] Identify required diagrams/simulations for Chapter 12
+- [ ] T314 [US3] Source identification (peer-reviewed + industry) for Chapter 12
+- [ ] T315 [US3] Decide AI-agent interactions for Chapter 12
+- [ ] T316 [US3] Collect and log sources with APA metadata for Chapter 12
+- [ ] T317 [US3] Draft conceptual explanations for Chapter 12
+- [ ] T318 [US3] Insert citations inline for Chapter 12
+- [ ] T319 [US3] Validate factual claims for Chapter 12
+- [ ] T320 [US3] Create introduction and motivation section for Chapter 12
+- [ ] T321 [US3] Create core concepts and systems section for Chapter 12
+- [ ] T322 [US3] Create robotics/AI integration narrative for Chapter 12
+- [ ] T323 [US3] Create case studies or real-world systems for Chapter 12
+- [ ] T324 [US3] Create summary and reflection prompts for Chapter 12
+- [ ] T325 [US3] Create AI tutor prompts for Chapter 12
+- [ ] T326 [US3] Create self-assessment questions for Chapter 12
+- [ ] T327 [US3] Create agent-driven exploration tasks for Chapter 12
+- [ ] T328 [US3] Create "Ask the Robot" or "Simulate This" prompts for Chapter 12
+- [ ] T329 [US3] Fact-check Chapter 12 content against sources
+- [ ] T330 [US3] Perform citation completeness check for Chapter 12
+- [ ] T331 [US3] Perform plagiarism self-check for Chapter 12
+- [ ] T332 [US3] Perform readability check (target grade 10–12) for Chapter 12
+- [ ] T333 [US3] Convert Chapter 12 to MDX format
+- [ ] T334 [US3] Link Chapter 12 into sidebar navigation
+- [ ] T335 [US3] Verify navigation functionality for Chapter 12
+- [ ] T336 [US3] Build and preview site with Chapter 12
+- [ ] T337 [US3] Cross-chapter consistency review for Module 3
+- [ ] T338 [US3] Merge Module 3 to main branch
+
+## Phase 6: User Story 4 - Student Implements Vision-Language-Action Pipelines (P4)
+
+- [ ] T339 [US4] Create Module 4 index file (docs/module-4/index.mdx)
+- [ ] T340 [US4] Create Chapter 13 spec file for Vision for Humanoid Robots
+- [ ] T341 [US4] Define learning objectives for Chapter 13 content
+- [ ] T342 [US4] Identify required diagrams/simulations for Chapter 13
+- [ ] T343 [US4] Source identification (peer-reviewed + industry) for Chapter 13
+- [ ] T344 [US4] Decide AI-agent interactions for Chapter 13
+- [ ] T345 [US4] Collect and log sources with APA metadata for Chapter 13
+- [ ] T346 [US4] Draft conceptual explanations for Chapter 13
+- [ ] T347 [US4] Insert citations inline for Chapter 13
+- [ ] T348 [US4] Validate factual claims for Chapter 13
+- [ ] T349 [US4] Create introduction and motivation section for Chapter 13
+- [ ] T350 [US4] Create core concepts and systems section for Chapter 13
+- [ ] T351 [US4] Create robotics/AI integration narrative for Chapter 13
+- [ ] T352 [US4] Create case studies or real-world systems for Chapter 13
+- [ ] T353 [US4] Create summary and reflection prompts for Chapter 13
+- [ ] T354 [US4] Create AI tutor prompts for Chapter 13
+- [ ] T355 [US4] Create self-assessment questions for Chapter 13
+- [ ] T356 [US4] Create agent-driven exploration tasks for Chapter 13
+- [ ] T357 [US4] Create "Ask the Robot" or "Simulate This" prompts for Chapter 13
+- [ ] T358 [US4] Fact-check Chapter 13 content against sources
+- [ ] T359 [US4] Perform citation completeness check for Chapter 13
+- [ ] T360 [US4] Perform plagiarism self-check for Chapter 13
+- [ ] T361 [US4] Perform readability check (target grade 10–12) for Chapter 13
+- [ ] T362 [US4] Convert Chapter 13 to MDX format
+- [ ] T363 [US4] Link Chapter 13 into sidebar navigation
+- [ ] T364 [US4] Verify navigation functionality for Chapter 13
+- [ ] T365 [US4] Build and preview site with Chapter 13
+- [ ] T366 [US4] Create Chapter 14 spec file for Language as a Control Interface
+- [ ] T367 [US4] Define learning objectives for Chapter 14 content
+- [ ] T368 [US4] Identify required diagrams/simulations for Chapter 14
+- [ ] T369 [US4] Source identification (peer-reviewed + industry) for Chapter 14
+- [ ] T370 [US4] Decide AI-agent interactions for Chapter 14
+- [ ] T371 [US4] Collect and log sources with APA metadata for Chapter 14
+- [ ] T372 [US4] Draft conceptual explanations for Chapter 14
+- [ ] T373 [US4] Insert citations inline for Chapter 14
+- [ ] T374 [US4] Validate factual claims for Chapter 14
+- [ ] T375 [US4] Create introduction and motivation section for Chapter 14
+- [ ] T376 [US4] Create core concepts and systems section for Chapter 14
+- [ ] T377 [US4] Create robotics/AI integration narrative for Chapter 14
+- [ ] T378 [US4] Create case studies or real-world systems for Chapter 14
+- [ ] T379 [US4] Create summary and reflection prompts for Chapter 14
+- [ ] T380 [US4] Create AI tutor prompts for Chapter 14
+- [ ] T381 [US4] Create self-assessment questions for Chapter 14
+- [ ] T382 [US4] Create agent-driven exploration tasks for Chapter 14
+- [ ] T383 [US4] Create "Ask the Robot" or "Simulate This" prompts for Chapter 14
+- [ ] T384 [US4] Fact-check Chapter 14 content against sources
+- [ ] T385 [US4] Perform citation completeness check for Chapter 14
+- [ ] T386 [US4] Perform plagiarism self-check for Chapter 14
+- [ ] T387 [US4] Perform readability check (target grade 10–12) for Chapter 14
+- [ ] T388 [US4] Convert Chapter 14 to MDX format
+- [ ] T389 [US4] Link Chapter 14 into sidebar navigation
+- [ ] T390 [US4] Verify navigation functionality for Chapter 14
+- [ ] T391 [US4] Build and preview site with Chapter 14
+- [ ] T392 [US4] Create Chapter 15 spec file for Vision-Language-Action (VLA)
+- [ ] T393 [US4] Define learning objectives for Chapter 15 content
+- [ ] T394 [US4] Identify required diagrams/simulations for Chapter 15
+- [ ] T395 [US4] Source identification (peer-reviewed + industry) for Chapter 15
+- [ ] T396 [US4] Decide AI-agent interactions for Chapter 15
+- [ ] T397 [US4] Collect and log sources with APA metadata for Chapter 15
+- [ ] T398 [US4] Draft conceptual explanations for Chapter 15
+- [ ] T399 [US4] Insert citations inline for Chapter 15
+- [ ] T400 [US4] Validate factual claims for Chapter 15
+- [ ] T401 [US4] Create introduction and motivation section for Chapter 15
+- [ ] T402 [US4] Create core concepts and systems section for Chapter 15
+- [ ] T403 [US4] Create robotics/AI integration narrative for Chapter 15
+- [ ] T404 [US4] Create case studies or real-world systems for Chapter 15
+- [ ] T405 [US4] Create summary and reflection prompts for Chapter 15
+- [ ] T406 [US4] Create AI tutor prompts for Chapter 15
+- [ ] T407 [US4] Create self-assessment questions for Chapter 15
+- [ ] T408 [US4] Create agent-driven exploration tasks for Chapter 15
+- [ ] T409 [US4] Create "Ask the Robot" or "Simulate This" prompts for Chapter 15
+- [ ] T410 [US4] Fact-check Chapter 15 content against sources
+- [ ] T411 [US4] Perform citation completeness check for Chapter 15
+- [ ] T412 [US4] Perform plagiarism self-check for Chapter 15
+- [ ] T413 [US4] Perform readability check (target grade 10–12) for Chapter 15
+- [ ] T414 [US4] Convert Chapter 15 to MDX format
+- [ ] T415 [US4] Link Chapter 15 into sidebar navigation
+- [ ] T416 [US4] Verify navigation functionality for Chapter 15
+- [ ] T417 [US4] Build and preview site with Chapter 15
+- [ ] T418 [US4] Create Chapter 16 spec file for The Autonomous Humanoid Capstone
+- [ ] T419 [US4] Define learning objectives for Chapter 16 content
+- [ ] T420 [US4] Identify required diagrams/simulations for Chapter 16
+- [ ] T421 [US4] Source identification (peer-reviewed + industry) for Chapter 16
+- [ ] T422 [US4] Decide AI-agent interactions for Chapter 16
+- [ ] T423 [US4] Collect and log sources with APA metadata for Chapter 16
+- [ ] T424 [US4] Draft conceptual explanations for Chapter 16
+- [ ] T425 [US4] Insert citations inline for Chapter 16
+- [ ] T426 [US4] Validate factual claims for Chapter 16
+- [ ] T427 [US4] Create introduction and motivation section for Chapter 16
+- [ ] T428 [US4] Create core concepts and systems section for Chapter 16
+- [ ] T429 [US4] Create robotics/AI integration narrative for Chapter 16
+- [ ] T430 [US4] Create case studies or real-world systems for Chapter 16
+- [ ] T431 [US4] Create summary and reflection prompts for Chapter 16
+- [ ] T432 [US4] Create AI tutor prompts for Chapter 16
+- [ ] T433 [US4] Create self-assessment questions for Chapter 16
+- [ ] T434 [US4] Create agent-driven exploration tasks for Chapter 16
+- [ ] T435 [US4] Create "Ask the Robot" or "Simulate This" prompts for Chapter 16
+- [ ] T436 [US4] Fact-check Chapter 16 content against sources
+- [ ] T437 [US4] Perform citation completeness check for Chapter 16
+- [ ] T438 [US4] Perform plagiarism self-check for Chapter 16
+- [ ] T439 [US4] Perform readability check (target grade 10–12) for Chapter 16
+- [ ] T440 [US4] Convert Chapter 16 to MDX format
+- [ ] T441 [US4] Link Chapter 16 into sidebar navigation
+- [ ] T442 [US4] Verify navigation functionality for Chapter 16
+- [ ] T443 [US4] Build and preview site with Chapter 16
+- [ ] T444 [US4] Cross-chapter consistency review for Module 4
+- [ ] T445 [US4] Merge Module 4 to main branch
+
+## Phase 7: Polish & Cross-Cutting Concerns
+
+- [ ] T446 Perform overall textbook consistency review across all modules
+- [ ] T447 Verify minimum 50% peer-reviewed sources requirement across all chapters
+- [ ] T448 Perform final academic rigor validation across entire textbook
+- [ ] T449 Test all AI-agent prompts for functionality and context appropriateness
+- [ ] T450 Validate all practical labs work in simulation environment
+- [ ] T451 Verify Docusaurus build completes under 5 minutes
+- [ ] T452 Perform final quality validation framework checks
+- [ ] T453 Run automated citation verification across all chapters
+- [ ] T454 Perform content validation checks for technical accuracy
+- [ ] T455 Verify all system architecture explanations are accurate and implementable
+- [ ] T456 Test GitHub Pages deployment with full textbook content
+- [ ] T457 Perform final cross-module consistency check for capstone alignment
+- [ ] T458 Create final deployment package for Panaversity infrastructure
+- [ ] T459 Document any remaining open research questions or content gaps
+- [ ] T460 Prepare textbook for AI-agent augmentation (tutors, reviewers, copilots)
+
+## Dependencies
+
+- User Story 1 (Module 1) must be completed before User Story 2 (Module 2)
+- User Story 2 (Module 2) must be completed before User Story 3 (Module 3)
+- User Story 3 (Module 3) must be completed before User Story 4 (Module 4)
+- User Story 4 (Module 4) represents the capstone and finalizes the textbook
+
+## Parallel Execution Examples
+
+- Within each module, chapters can be developed in parallel by different team members
+- Chapter 1 content development can happen in parallel with Chapter 2 research phase
+- AI-agent prompts can be created in parallel with content development
+- Citation verification can run in parallel with content writing
+- Quality validation checks can run in parallel for different modules
+
+## Implementation Strategy
+
+1. **MVP Scope**: Complete User Story 1 (Module 1) as the minimum viable product
+2. **Incremental Delivery**: Each module represents a deliverable increment
+3. **Parallel Development**: Chapters within modules can be developed simultaneously
+4. **Continuous Validation**: Quality checks happen throughout development process

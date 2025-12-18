@@ -1,0 +1,109 @@
+---
+title: Chapter 3 - Sensors as Perception Organs
+---
+
+# Chapter 3: Sensors as Perception Organs
+
+## Learning Objectives
+
+- Identify different types of sensors used in robotics (cameras, LiDAR, IMUs, force/torque sensors)
+- Understand sensor noise, calibration, and data fusion concepts
+- Explain how sensors enable robot perception of the environment
+
+## Conceptual Foundations
+
+Robotic sensors serve as the perception organs that allow robots to understand their environment and internal state. Just as humans use eyes, ears, and touch to perceive the world, robots rely on various sensors to gather information.
+
+### Types of Sensors
+
+#### Vision Sensors
+- **Cameras**: Provide visual information about the environment
+  - RGB cameras for color information
+  - Depth cameras for 3D information
+  - Stereo cameras for depth estimation
+- **Applications**: Object recognition, scene understanding, navigation
+
+#### Range Sensors
+- **LiDAR**: Light Detection and Ranging
+  - Provides precise 3D point cloud data
+  - Works in various lighting conditions
+  - High accuracy for mapping and localization
+- **Applications**: Environment mapping, obstacle detection, SLAM
+
+#### Inertial Sensors
+- **IMUs (Inertial Measurement Units)**: Measure acceleration and angular velocity
+  - Accelerometers: Measure linear acceleration
+  - Gyroscopes: Measure angular velocity
+  - Magnetometers: Measure magnetic field for orientation
+- **Applications**: Balance control, motion tracking, navigation
+
+#### Force/Torque Sensors
+- **Six-axis force/torque sensors**: Measure forces and torques in all directions
+- **Applications**: Grasping, manipulation, contact detection
+
+### Sensor Characteristics
+
+#### Noise and Uncertainty
+All sensors have inherent noise that must be accounted for:
+- **Bias**: Systematic error that shifts measurements
+- **Noise**: Random variations in measurements
+- **Drift**: Slow changes in sensor characteristics over time
+
+#### Calibration
+Sensors require calibration to ensure accuracy:
+- **Intrinsic calibration**: Internal parameters (e.g., camera focal length)
+- **Extrinsic calibration**: Position and orientation relative to robot frame
+- **Temporal calibration**: Synchronization between different sensors
+
+## System Architecture
+
+Sensor integration typically follows a pipeline:
+
+1. **Raw Data Acquisition**: Collect sensor measurements
+2. **Preprocessing**: Filter, synchronize, and format data
+3. **Fusion**: Combine data from multiple sensors
+4. **Interpretation**: Extract meaningful information
+5. **Application**: Use information for control or decision-making
+
+### Sensor Fusion Approaches
+
+- **Early fusion**: Combine raw sensor data before processing
+- **Late fusion**: Process sensors independently, then combine results
+- **Deep fusion**: Learn optimal combination strategies through neural networks
+
+## Practical Labs / Simulations
+
+### Lab 3.1: Sensor Simulation in Gazebo
+- **Requirements**: Gazebo simulation environment, ROS 2 installation
+- **Tools**: Gazebo, ROS 2
+- **Complexity**: Intermediate
+- **Steps**:
+  1. Create a robot model with different sensor types in Gazebo
+  2. Visualize data from cameras, LiDAR, and IMU sensors
+  3. Observe how sensor data changes with robot movement
+- **Expected Outcome**: Student can visualize and understand different sensor data types
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain the differences between various sensor types and their applications"
+- "How do sensor noise and calibration affect robot perception?"
+
+### Debugging Prompts
+- "What are common issues with sensor data in robotics applications?"
+- "How do you handle sensor failures or degraded performance?"
+
+### "Explain-this-system" Prompts
+- "Explain how sensor fusion improves robot perception capabilities"
+- "Describe the sensor pipeline from raw data to actionable information"
+
+## Summary & Readiness Check
+
+- Sensors serve as the perception organs for robots, enabling environmental awareness
+- Different sensor types provide complementary information (vision, range, inertial, force)
+- Sensor noise and calibration must be managed for reliable operation
+- Sensor fusion combines multiple sensors to improve perception accuracy
+
+### Capstone Relevance
+
+Understanding sensor systems is crucial for developing autonomous humanoid robots that can perceive and interact with their environment effectively.

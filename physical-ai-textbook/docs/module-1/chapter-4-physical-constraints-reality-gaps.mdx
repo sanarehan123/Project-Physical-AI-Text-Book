@@ -1,0 +1,111 @@
+---
+title: Chapter 4 - Physical Constraints & Reality Gaps
+---
+
+# Chapter 4: Physical Constraints & Reality Gaps
+
+## Learning Objectives
+
+- Understand physics, latency, power, and safety constraints in physical robots
+- Explain the simulation vs real-world mismatch problem
+- Describe Sim-to-Real approaches and techniques
+
+## Conceptual Foundations
+
+Physical robots operate under fundamental constraints that digital systems do not face. Understanding these constraints is crucial for developing effective Physical AI systems that can operate reliably in the real world.
+
+### Physical Constraints
+
+#### Physics Constraints
+- **Gravity**: Affects all moving objects and requires active control for balance
+- **Friction**: Both beneficial (for grip) and limiting (for movement)
+- **Momentum**: Objects in motion tend to stay in motion
+- **Collision dynamics**: Complex interactions when objects make contact
+
+#### Latency Constraints
+- **Processing latency**: Time between sensor input and actuator output
+- **Communication latency**: Delays in sensor/actuator communication
+- **Control frequency**: Minimum update rates required for stability
+- **Real-time requirements**: Systems must respond within strict time bounds
+
+#### Power Constraints
+- **Battery limitations**: Finite energy storage affects operation time
+- **Peak power demands**: High power requirements during certain operations
+- **Efficiency considerations**: Balancing performance with power consumption
+- **Thermal management**: Power dissipation and heat generation
+
+#### Safety Constraints
+- **Kinematic limits**: Joint angle and velocity constraints
+- **Dynamic limits**: Force and acceleration constraints
+- **Environmental safety**: Protecting humans and environment
+- **System safety**: Failsafe mechanisms and error handling
+
+### Reality Gaps
+
+#### Sim-to-Real Gap
+The simulation-to-reality gap refers to differences between simulated and real environments that affect robot performance:
+
+- **Dynamics mismatch**: Inaccurate simulation of physical interactions
+- **Sensor noise**: Real sensors have more complex noise patterns than simulated ones
+- **Actuator limitations**: Real actuators have delays, friction, and compliance
+- **Environmental variations**: Real world has more unmodeled elements
+
+#### Sources of Reality Gap
+- **Model simplification**: Simulations use simplified physics models
+- **Parameter uncertainty**: Real parameters differ from estimated values
+- **Unmodeled dynamics**: Complex interactions not captured in simulation
+- **Environmental factors**: Lighting, surface properties, air currents
+
+## System Architecture
+
+Addressing reality gaps requires a multi-layered approach:
+
+1. **Robust design**: Systems that handle variations and uncertainties
+2. **Adaptive control**: Controllers that adjust to changing conditions
+3. **Domain randomization**: Training in varied simulation conditions
+4. **System identification**: Learning real system parameters
+5. **Online adaptation**: Real-time adjustment of control strategies
+
+### Sim-to-Real Techniques
+
+- **Domain Randomization**: Randomizing simulation parameters to improve robustness
+- **System Identification**: Learning accurate models of real system dynamics
+- **Robust Control**: Controllers that maintain performance despite uncertainties
+- **Online Learning**: Adapting to real-world conditions during operation
+
+## Practical Labs / Simulations
+
+### Lab 4.1: Reality Gap Simulation
+- **Requirements**: Gazebo simulation environment, ROS 2 installation
+- **Tools**: Gazebo, ROS 2
+- **Complexity**: Intermediate
+- **Steps**:
+  1. Create simulation with controlled reality gap (e.g., different friction)
+  2. Run controller developed in one condition in different conditions
+  3. Observe performance degradation and adaptation strategies
+- **Expected Outcome**: Student understands the impact of reality gaps on robot performance
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain the main differences between simulated and real robotic environments"
+- "What are common approaches to address the Sim-to-Real gap?"
+
+### Debugging Prompts
+- "How do you identify if performance issues are due to reality gaps?"
+- "What strategies can be used to make controllers more robust to reality gaps?"
+
+### "Explain-this-system" Prompts
+- "Explain how domain randomization helps bridge the Sim-to-Real gap"
+- "Describe the multi-layered approach to handling reality gaps in robotics"
+
+## Summary & Readiness Check
+
+- Physical robots face constraints from physics, latency, power, and safety
+- Reality gaps between simulation and real world create performance challenges
+- Sim-to-Real techniques help address the simulation-reality mismatch
+- Robust and adaptive control strategies are needed for real-world operation
+
+### Capstone Relevance
+
+Understanding physical constraints and reality gaps is essential for developing humanoid robots that can operate reliably in real-world environments as required by the capstone project.

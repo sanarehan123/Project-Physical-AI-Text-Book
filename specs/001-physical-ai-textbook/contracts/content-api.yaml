@@ -1,0 +1,432 @@
+openapi: 3.0.0
+info:
+  title: Physical AI & Humanoid Robotics Textbook API
+  version: 1.0.0
+  description: API for managing textbook content, chapters, and learning resources
+
+paths:
+  /modules:
+    get:
+      summary: Get all modules
+      description: Retrieve a list of all 4 modules in the textbook
+      responses:
+        '200':
+          description: List of modules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Module'
+
+  /modules/{moduleId}:
+    get:
+      summary: Get module by ID
+      description: Retrieve a specific module and its chapters
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+      responses:
+        '200':
+          description: Module details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+
+  /chapters:
+    get:
+      summary: Get all chapters
+      description: Retrieve a list of all 16 chapters in the textbook
+      responses:
+        '200':
+          description: List of chapters
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chapter'
+
+  /chapters/{chapterId}:
+    get:
+      summary: Get chapter by ID
+      description: Retrieve a specific chapter with all its content
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 16
+      responses:
+        '200':
+          description: Chapter details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chapter'
+
+  /citations:
+    get:
+      summary: Get all citations
+      description: Retrieve all citations used in the textbook
+      responses:
+        '200':
+          description: List of citations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Citation'
+
+  /ai-agent-prompts:
+    get:
+      summary: Get AI agent prompts
+      description: Retrieve all AI agent prompts for tutoring, debugging, and explanations
+      parameters:
+        - name: moduleId
+          in: query
+          required: false
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4]
+        - name: chapterId
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 16
+      responses:
+        '200':
+          description: List of AI agent prompts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AIAgentPrompt'
+
+components:
+  schemas:
+    Module:
+      type: object
+      required:
+        - id
+        - title
+        - description
+        - chapters
+        - position
+      properties:
+        id:
+          type: integer
+          example: 1
+          description: Unique identifier for the module
+        title:
+          type: string
+          example: "Foundations of Physical AI & Embodied Intelligence"
+          description: Module title and theme
+        description:
+          type: string
+          example: "From Digital AI to Intelligence in the Physical World"
+          description: Overview of module content and objectives
+        chapters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chapter'
+          description: Array of chapter references in sequence
+        learningPath:
+          type: string
+          description: Prerequisites and connections to other modules
+        capstoneAlignment:
+          type: string
+          description: How the module supports the final capstone project
+        position:
+          type: integer
+          minimum: 1
+          maximum: 4
+          example: 1
+          description: Module number (1-4)
+
+    Chapter:
+      type: object
+      required:
+        - id
+        - title
+        - moduleId
+        - learningObjectives
+        - conceptualFoundations
+        - systemArchitecture
+        - practicalLabs
+        - aiAgentPrompts
+        - summary
+        - citations
+        - position
+      properties:
+        id:
+          type: string
+          example: "chapter-1-introduction-to-physical-ai"
+          description: Unique identifier for the chapter
+        title:
+          type: string
+          example: "Introduction to Physical AI"
+          description: Display title of the chapter
+        moduleId:
+          type: integer
+          example: 1
+          description: Reference to the parent module
+        learningObjectives:
+          type: array
+          items:
+            $ref: '#/components/schemas/LearningObjective'
+          description: Array of measurable learning outcomes
+        conceptualFoundations:
+          type: string
+          description: High-level explanations grounded in physical reality
+        systemArchitecture:
+          type: array
+          items:
+            $ref: '#/components/schemas/ArchitectureDiagram'
+          description: Text-described diagrams and architecture explanations
+        practicalLabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/PracticalLab'
+          description: Array of simulation-based exercises and activities
+        aiAgentPrompts:
+          type: array
+          items:
+            $ref: '#/components/schemas/AIAgentPrompt'
+          description: Array of tutor, debugging, and explanation prompts
+        summary:
+          type: string
+          description: Key takeaways and capstone relevance
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+          description: Array of APA-formatted references
+        position:
+          type: object
+          properties:
+            inModule:
+              type: integer
+              minimum: 1
+              maximum: 4
+              example: 1
+              description: Chapter number within the module
+            overall:
+              type: integer
+              minimum: 1
+              maximum: 16
+              example: 1
+              description: Overall sequence number (1-16)
+
+    LearningObjective:
+      type: object
+      required:
+        - id
+        - text
+        - type
+      properties:
+        id:
+          type: string
+          example: "lo-1.1"
+          description: Unique identifier for the objective
+        text:
+          type: string
+          example: "Define Physical AI and embodied intelligence"
+          description: Clear, measurable outcome statement
+        moduleId:
+          type: integer
+          example: 1
+          description: Reference to the parent module
+        chapterId:
+          type: string
+          example: "chapter-1-introduction-to-physical-ai"
+          description: Reference to the parent chapter
+        type:
+          type: string
+          enum: ["conceptual", "practical", "analytical", "capstone-relevant"]
+          example: "conceptual"
+          description: Category of the learning objective
+
+    PracticalLab:
+      type: object
+      required:
+        - id
+        - title
+        - requirements
+        - steps
+        - expectedOutcome
+        - tools
+      properties:
+        id:
+          type: string
+          example: "lab-1.1"
+          description: Unique identifier for the lab
+        title:
+          type: string
+          example: "Basic Robot Simulation in Gazebo"
+          description: Lab title and purpose
+        moduleId:
+          type: integer
+          example: 1
+          description: Reference to the parent module
+        chapterId:
+          type: string
+          example: "chapter-1-introduction-to-physical-ai"
+          description: Reference to the parent chapter
+        requirements:
+          type: array
+          items:
+            type: string
+          example: ["Gazebo simulation environment", "ROS 2 installation"]
+          description: Software/hardware requirements (simulation-first)
+        steps:
+          type: array
+          items:
+            type: string
+          example: ["Launch Gazebo environment", "Spawn robot model", "Run basic movement commands"]
+          description: Sequential steps for completing the lab
+        expectedOutcome:
+          type: string
+          example: "Student can control a simulated robot in Gazebo"
+          description: What students should achieve
+        tools:
+          type: array
+          items:
+            type: string
+          example: ["Gazebo", "ROS 2"]
+          description: Tools used (Gazebo, Isaac Sim, ROS 2, etc.)
+        complexity:
+          type: string
+          enum: ["beginner", "intermediate", "advanced"]
+          example: "beginner"
+          description: Difficulty level
+
+    AIAgentPrompt:
+      type: object
+      required:
+        - id
+        - type
+        - context
+        - promptText
+      properties:
+        id:
+          type: string
+          example: "prompt-1.1"
+          description: Unique identifier for the prompt
+        type:
+          type: string
+          enum: ["tutor", "debugging", "explanation"]
+          example: "tutor"
+          description: Category of the prompt
+        context:
+          type: string
+          example: "When student doesn't understand sensor fusion concepts"
+          description: When this prompt should be used
+        promptText:
+          type: string
+          example: "Explain sensor fusion in the context of humanoid robotics..."
+          description: The actual prompt for the AI agent
+        moduleId:
+          type: integer
+          example: 1
+          description: Reference to the parent module
+        chapterId:
+          type: string
+          example: "chapter-1-introduction-to-physical-ai"
+          description: Reference to the parent chapter
+        targetAudience:
+          type: string
+          example: "Undergraduate students"
+          description: Specific audience the prompt addresses
+
+    Citation:
+      type: object
+      required:
+        - id
+        - type
+        - apaFormat
+        - verificationStatus
+      properties:
+        id:
+          type: string
+          example: "ref-001"
+          description: Unique identifier for the citation
+        type:
+          type: string
+          enum: ["peer-reviewed", "documentation", "industry"]
+          example: "peer-reviewed"
+          description: Source type
+        apaFormat:
+          type: string
+          example: "Smith, J. (2023). Introduction to Physical AI. Journal of Robotics, 15(3), 45-67."
+          description: Full APA-formatted citation
+        url:
+          type: string
+          format: uri
+          example: "https://example.com/paper"
+          description: Optional URL for online sources
+        verificationStatus:
+          type: string
+          enum: ["verified", "pending", "invalid"]
+          example: "verified"
+          description: Status of source verification
+        usedIn:
+          type: array
+          items:
+            type: string
+          example: ["chapter-1-introduction-to-physical-ai"]
+          description: Array of chapters where this citation is used
+        recency:
+          type: integer
+          example: 2023
+          description: Publication year for recency tracking
+
+    ArchitectureDiagram:
+      type: object
+      required:
+        - id
+        - title
+        - description
+      properties:
+        id:
+          type: string
+          example: "diag-1.1"
+          description: Unique identifier for the diagram
+        title:
+          type: string
+          example: "Digital AI to Physical Robot Flow"
+          description: Diagram title
+        moduleId:
+          type: integer
+          example: 1
+          description: Reference to the parent module
+        chapterId:
+          type: string
+          example: "chapter-1-introduction-to-physical-ai"
+          description: Reference to the parent chapter
+        description:
+          type: string
+          example: "Text description of the system architecture diagram"
+          description: Text-based description of the diagram (AI-renderable)
+        dataFlow:
+          type: string
+          description: Description of data flows in the diagram
+        components:
+          type: array
+          items:
+            type: string
+          description: List of system components shown
+        relationships:
+          type: string
+          description: Description of relationships between components

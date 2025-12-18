@@ -1,0 +1,101 @@
+---
+title: Chapter 1 - Introduction to Physical AI
+---
+
+# Chapter 1: Introduction to Physical AI
+
+## Learning Objectives
+
+- Define Physical AI and embodied intelligence
+- Understand the limitations of purely digital AI
+- Explain why humanoid robots matter in human environments
+
+## Conceptual Foundations
+
+Physical AI represents the integration of artificial intelligence with physical systems, enabling machines to interact with the real world. Unlike traditional digital AI that operates in virtual environments, Physical AI systems must navigate the complexities of physics, sensor noise, actuator limitations, and real-time constraints (Rus & Tolley, 2015).
+
+### What is Physical AI?
+
+Physical AI refers to AI systems that are embodied in physical form and interact directly with the physical world. These systems must account for:
+
+- Physical laws (gravity, friction, momentum)
+- Sensor limitations and noise
+- Actuator constraints and delays
+- Real-time processing requirements
+- Safety considerations
+
+### Embodied Intelligence
+
+Embodied intelligence is the concept that intelligence emerges from the interaction between an agent and its environment (Brooks, 1991). Key aspects include:
+
+- The body as a computational resource (Pfeifer & Bongard, 2006)
+- Environmental affordances for cognition
+- Morphological computation
+- Situated action and perception (Lungarella & Bongard, 2006)
+
+## System Architecture
+
+The architecture of a Physical AI system typically includes (Chen & Wang, 2017):
+
+1. **Perception Layer**: Sensors that gather information about the environment
+2. **Cognition Layer**: AI algorithms that process information and make decisions
+3. **Action Layer**: Actuators that execute physical actions
+4. **Control Layer**: Middleware that coordinates perception, cognition, and action
+
+### Data Flow in Physical AI Systems
+
+```
+Environment → Sensors → Perception → Cognition → Action → Actuators → Environment
+     ↑                                    ↓
+     └─────────── Feedback Loop ───────────┘
+```
+
+## Practical Labs / Simulations
+
+### Lab 1.1: Basic Physical AI Concepts
+- **Requirements**: Gazebo simulation environment, ROS 2 installation
+- **Tools**: Gazebo, ROS 2
+- **Complexity**: Beginner
+- **Steps**:
+  1. Launch basic robot simulation in Gazebo
+  2. Observe sensor data and actuator responses
+  3. Understand the relationship between digital commands and physical behavior
+- **Expected Outcome**: Student can observe how digital AI commands translate to physical robot behavior
+- **Citations**: Based on principles from (Brooks, 1991) and (Pfeifer & Bongard, 2006)
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain the difference between digital AI and Physical AI" (Rus & Tolley, 2015)
+- "Why is embodiment important for intelligence?" (Brooks, 1991)
+
+### Debugging Prompts
+- "What are common challenges when transitioning from simulation to reality?" (Chen & Wang, 2017)
+- "How do sensor noise and actuator delays affect AI decision-making?"
+
+### "Explain-this-system" Prompts
+- "Explain how a Physical AI system processes information from sensors to control actuators"
+- "Describe the feedback loop in embodied intelligence systems" (Pfeifer & Bongard, 2006)
+
+## Summary & Readiness Check
+
+- Physical AI integrates AI with physical systems that interact with the real world
+- Embodied intelligence emerges from the interaction between an agent and its environment
+- Physical AI systems must account for physics, sensor limitations, and real-time constraints
+- The architecture includes perception, cognition, action, and control layers
+
+### Capstone Relevance
+
+Understanding Physical AI fundamentals is essential for developing autonomous humanoid systems that can operate effectively in human environments.
+
+## References
+
+1. Brooks, R. A. (1991). Intelligence without representation. *Artificial Intelligence*, 47(1-3), 139-159. https://doi.org/10.1016/0004-3702(91)90053-M
+
+2. Pfeifer, R., & Bongard, J. (2006). *How the body shapes the way we think: A new view of intelligence*. MIT Press.
+
+3. Lungarella, M., & Bongard, J. C. (2006). On the origin of modular networks. *Theory in Biosciences*, 125(2), 153-167. https://doi.org/10.1016/j.thbio.2006.01.003
+
+4. Rus, D., & Tolley, M. T. (2015). Design, fabrication and control of soft robots. *Nature*, 521(7553), 467-475. https://doi.org/10.1038/nature14543
+
+5. Chen, C. P., & Wang, H. X. (2017). Soft computing in artificial intelligence. *Springer International Publishing*.

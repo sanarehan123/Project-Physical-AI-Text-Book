@@ -1,0 +1,113 @@
+---
+title: Chapter 7 - Robot Description & URDF
+---
+
+# Chapter 7: Robot Description & URDF
+
+## Learning Objectives
+
+- Understand URDF (Unified Robot Description Format) and SDF formats
+- Model humanoid kinematics using URDF
+- Define joint limits and collision models for robots
+
+## Conceptual Foundations
+
+URDF (Unified Robot Description Format) is the standard XML-based format for describing robot models in ROS. It defines the physical and visual properties of robots, enabling simulation, visualization, and control across different ROS tools.
+
+### URDF Structure
+
+#### Robot Definition
+- **Robot tag**: Root element containing the robot description
+- **Links**: Rigid bodies that make up the robot structure
+- **Joints**: Connections between links with specific kinematic properties
+- **Materials**: Visual appearance properties for rendering
+
+#### Link Elements
+- **Inertial properties**: Mass, center of mass, and inertia tensor
+- **Visual properties**: Meshes, colors, and visual appearance
+- **Collision properties**: Shapes used for collision detection
+
+#### Joint Elements
+- **Joint types**: Fixed, continuous, revolute, prismatic, floating, planar
+- **Joint limits**: Position, velocity, and effort constraints
+- **Axis definitions**: Direction of joint movement
+- **Dynamics properties**: Damping and friction coefficients
+
+### SDF Format
+
+#### Gazebo Integration
+- **SDF (Simulation Description Format)**: Gazebo's native format
+- **URDF to SDF**: Automatic conversion for simulation
+- **Gazebo-specific elements**: Plugins, sensors, physics properties
+
+#### Advanced Features
+- **Transmission elements**: Motor and actuator models
+- **Gazebo plugins**: Simulation-specific behaviors
+- **Sensor definitions**: Integrated sensor models
+
+### Humanoid Kinematics
+
+#### Kinematic Chains
+- **Forward kinematics**: Calculating end-effector position from joint angles
+- **Inverse kinematics**: Calculating joint angles for desired end-effector position
+- **Kinematic constraints**: Joint limits and workspace boundaries
+
+#### Humanoid-Specific Considerations
+- **Bipedal structure**: Two legs with specific kinematic requirements
+- **Balance constraints**: Center of mass and support polygon considerations
+- **Manipulation workspace**: Arm reach and dexterity requirements
+
+## System Architecture
+
+URDF integrates with the ROS ecosystem through:
+
+```
+URDF File → Robot State Publisher → TF Transformations → Visualization & Control
+     ↓           ↓                       ↓                  ↓
+  Kinematics  Joint States         Robot Pose        MoveIt! Planning
+  Model       Broadcasting         Broadcasting      & Control
+```
+
+### Key Components
+- **robot_state_publisher**: Broadcasts joint states as transforms
+- **joint_state_publisher**: Provides joint position data
+- **TF system**: Maintains coordinate frame relationships
+- **MoveIt!**: Uses URDF for motion planning
+
+## Practical Labs / Simulations
+
+### Lab 7.1: URDF Robot Model Creation
+- **Requirements**: ROS 2 installation, basic XML knowledge
+- **Tools**: ROS 2, Gazebo, RViz
+- **Complexity**: Intermediate
+- **Steps**:
+  1. Create a simple URDF file for a basic robot
+  2. Load the robot model in RViz for visualization
+  3. Simulate the robot in Gazebo
+  4. Add joint limits and collision properties
+- **Expected Outcome**: Student can create and visualize basic robot models in URDF
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain the structure of a URDF file and its main elements"
+- "How do joint limits and collision models affect robot behavior?"
+
+### Debugging Prompts
+- "What are common URDF validation errors and how to fix them?"
+- "How do you debug kinematic issues in URDF robot models?"
+
+### "Explain-this-system" Prompts
+- "Explain how URDF enables robot simulation and control in ROS"
+- "Describe the relationship between URDF and the TF transformation system"
+
+## Summary & Readiness Check
+
+- URDF is the standard format for describing robot models in ROS
+- Robot descriptions include links, joints, and physical properties
+- Joint limits and collision models ensure safe robot operation
+- URDF integrates with visualization, simulation, and planning tools
+
+### Capstone Relevance
+
+URDF robot descriptions are essential for modeling humanoid robots and enabling their simulation, visualization, and control in the capstone project.
