@@ -31,12 +31,14 @@ const config = {
   projectName: 'physical-ai-textbook', // Usually your repo name.
 
   onBrokenLinks: 'warn',  // Changed from 'throw' to 'warn' to allow build to continue
-  onBrokenMarkdownLinks: 'warn',
   markdown: {
     mermaid: true,
     mdx1Compat: {
       admonitions: true,
       headingIds: true,
+    },
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
     },
   },
 
