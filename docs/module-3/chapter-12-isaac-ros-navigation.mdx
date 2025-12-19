@@ -1,0 +1,112 @@
+---
+title: Chapter 12 - Isaac ROS & Navigation
+---
+
+# Chapter 12: Isaac ROS & Navigation
+
+## Learning Objectives
+
+- Implement hardware-accelerated VSLAM using Isaac ROS
+- Configure Nav2 for humanoid path planning in simulation
+- Understand edge deployment constraints for Jetson platforms
+
+## Conceptual Foundations
+
+Isaac ROS bridges NVIDIA's hardware acceleration capabilities with ROS 2, providing optimized perception and navigation pipelines that leverage GPU acceleration for real-time robotics applications.
+
+### Hardware-Accelerated Perception
+
+#### VSLAM (Visual Simultaneous Localization and Mapping)
+- **Stereo vision processing**: Accelerated stereo matching algorithms
+- **Feature extraction**: GPU-accelerated feature detection and matching
+- **Bundle adjustment**: Optimized 3D reconstruction pipelines
+- **Loop closure detection**: Accelerated identification of revisited locations
+
+#### Sensor Processing
+- **LiDAR acceleration**: GPU-accelerated point cloud processing
+- **Camera processing**: Real-time image processing pipelines
+- **IMU integration**: Fused sensor data processing
+- **Multi-sensor fusion**: Combining different sensor types efficiently
+
+### Navigation with Nav2
+
+#### Path Planning
+- **Global planners**: A*, Dijkstra, and other graph-based algorithms
+- **Local planners**: Trajectory rollout and obstacle avoidance
+- **Costmap management**: Dynamic obstacle representation
+- **Recovery behaviors**: Handling navigation failures and obstacles
+
+#### Humanoid-Specific Navigation
+- **Footstep planning**: Planning for bipedal locomotion
+- **Balance-aware navigation**: Considering robot stability during movement
+- **Terrain adaptation**: Adjusting navigation for different surfaces
+- **Dynamic obstacle avoidance**: Real-time adaptation to moving obstacles
+
+### Edge Deployment on Jetson
+
+#### Hardware Constraints
+- **Compute limitations**: Optimizing algorithms for embedded GPUs
+- **Power consumption**: Managing thermal and power constraints
+- **Memory management**: Efficient use of limited RAM and storage
+- **Thermal considerations**: Managing heat dissipation in compact systems
+
+#### Optimization Strategies
+- **Model quantization**: Reducing neural network precision for efficiency
+- **Algorithm optimization**: Streamlining algorithms for embedded deployment
+- **Resource scheduling**: Managing compute resource allocation
+- **Power management**: Dynamic scaling of performance based on needs
+
+## System Architecture
+
+Isaac ROS architecture integrates hardware acceleration with ROS 2:
+
+```
+NVIDIA Hardware ←→ Isaac ROS Bridge ←→ ROS 2 Navigation ←→ Robot Control
+      ↓                  ↓                   ↓                  ↓
+  GPU Acceleration   Optimized ROS2      Navigation Stack   Humanoid
+  (CUDA, TensorRT)   Components          (Nav2, MoveIt!)    Controllers
+```
+
+### Key Components
+- **Isaac ROS packages**: GPU-accelerated ROS 2 nodes
+- **Hardware abstraction**: Standardized interfaces for NVIDIA hardware
+- **Performance monitoring**: Real-time performance tracking
+- **Resource management**: Optimized hardware utilization
+
+## Practical Labs / Simulations
+
+### Lab 12.1: Isaac ROS Navigation Setup
+- **Requirements**: NVIDIA Jetson platform or RTX GPU, Isaac ROS packages
+- **Tools**: Isaac ROS, Nav2, ROS 2, Gazebo/Isaac Sim
+- **Complexity**: Advanced
+- **Steps**:
+  1. Install Isaac ROS packages with GPU acceleration
+  2. Configure VSLAM pipeline with stereo cameras
+  3. Set up Nav2 navigation stack for humanoid robot
+  4. Test navigation in simulated environment with GPU acceleration
+- **Expected Outcome**: Student can configure and run hardware-accelerated navigation for humanoid robots
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain how Isaac ROS provides hardware acceleration for robotics"
+- "What are the challenges of navigation for humanoid robots?"
+
+### Debugging Prompts
+- "How do you optimize Isaac ROS pipelines for Jetson edge deployment?"
+- "What are common issues with GPU-accelerated navigation in robotics?"
+
+### "Explain-this-system" Prompts
+- "Explain the architecture of Isaac ROS integration with navigation systems"
+- "Describe how hardware acceleration improves real-time robotics performance"
+
+## Summary & Readiness Check
+
+- Isaac ROS provides hardware-accelerated perception and navigation
+- VSLAM algorithms benefit from GPU acceleration for real-time performance
+- Nav2 supports humanoid-specific navigation requirements
+- Jetson platforms require optimization for efficient edge deployment
+
+### Capstone Relevance
+
+Isaac ROS hardware acceleration and navigation capabilities are essential for developing high-performance autonomous humanoid robots for the capstone project.

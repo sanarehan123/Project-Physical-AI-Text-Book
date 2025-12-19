@@ -1,0 +1,177 @@
+.urduTranslation {
+  position: relative;
+}
+
+.translateButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  background: linear-gradient(135deg, #2563eb, #0f766e);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.translateButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.translateButton:active {
+  transform: translateY(0);
+}
+
+.translateButton.urduButton {
+  background: linear-gradient(135deg, #10b981, #2563eb);
+}
+
+.translateButton.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.translatedContent {
+  transition: all 0.3s ease;
+}
+
+.urduText {
+  font-family: 'Jameel Noori Nastaleeq', 'Urdu Typesetting', 'Noto Nastaliq Urdu', serif;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.8;
+}
+
+.urduMode {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Specific styling for Urdu text to improve readability */
+.urduText h1,
+.urduText h2,
+.urduText h3,
+.urduText h4,
+.urduText h5,
+.urduText h6 {
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  text-align: right;
+}
+
+.urduText p {
+  margin: 1rem 0;
+  text-align: right;
+  line-height: 1.8;
+}
+
+.urduText ul,
+.urduText ol {
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.urduText li {
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+
+.urduText blockquote {
+  border-right: 4px solid var(--ifm-color-primary);
+  border-left: none;
+  padding-right: 1.5rem;
+  padding-left: 0;
+  text-align: right;
+}
+
+.urduText table {
+  direction: rtl;
+}
+
+.urduText code {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .translateButton {
+    top: 15px;
+    right: 15px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .translateButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-width: 90px;
+  }
+}
+
+/* Adjust for RTL layout */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* Special handling for mixed content */
+.mixedContent {
+  direction: rtl;
+}
+
+.mixedContent [dir="ltr"] {
+  direction: ltr;
+}
+
+/* Improve Urdu text rendering */
+@supports (font-variant-east-asian: ruby) {
+  .urduText {
+    font-variant-east-asian: ruby;
+  }
+}
+
+/* Fallback for browsers that don't support specific Urdu fonts */
+@font-face {
+  font-family: 'Urdu Fallback';
+  src: local('Jameel Noori Nastaleeq'),
+       local('Urdu Typesetting'),
+       local('Noto Nastaliq Urdu'),
+       local('Arial Unicode MS'),
+       local('Segoe UI');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* Make sure code blocks maintain LTR direction */
+.urduText .codeBlockContent,
+.urduText code {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Ensure proper spacing in RTL */
+.urduText .admonition {
+  text-align: right;
+  direction: rtl;
+}
+
+.urduText .pagination-nav__link {
+  text-align: right;
+  direction: rtl;
+}

@@ -1,0 +1,93 @@
+---
+title: Chapter 2 - Humanoid Robotics Landscape
+---
+
+# Chapter 2: Humanoid Robotics Landscape
+
+## Learning Objectives
+
+- Understand the overview of humanoid and legged robots
+- Describe degrees of freedom, actuation, and compliance in humanoid robots
+- Analyze case studies from research and industry
+
+## Conceptual Foundations
+
+Humanoid robots are designed with human-like form factors to operate effectively in human environments. This chapter explores the landscape of humanoid robotics, including different approaches, capabilities, and applications.
+
+### What Defines a Humanoid Robot?
+
+Humanoid robots are characterized by:
+
+- **Bipedal locomotion**: Ability to walk on two legs
+- **Human-like proportions**: Similar body structure to humans
+- **Manipulation capabilities**: Arms and hands for object interaction
+- **Human-centered design**: Optimized for human environments
+
+### Degrees of Freedom and Actuation
+
+Humanoid robots typically have 20-40+ degrees of freedom (DOF), distributed across:
+
+- **Legs**: 6 DOF each (hip, knee, ankle)
+- **Arms**: 7 DOF each (shoulder, elbow, wrist)
+- **Torso**: 1-3 DOF for balance
+- **Head/neck**: 2-3 DOF for orientation
+
+### Compliance and Safety
+
+Modern humanoid robots incorporate compliance mechanisms:
+
+- **Series Elastic Actuators (SEA)**: Provide safe, compliant interaction
+- **Variable Stiffness Actuators (VSA)**: Adjust compliance based on task
+- **Passive compliance**: Mechanical compliance for safety
+
+## System Architecture
+
+Humanoid robot architecture typically includes:
+
+1. **High-level planner**: Task and motion planning
+2. **Balance controller**: Maintain stability during locomotion
+3. **Trajectory generator**: Generate joint trajectories
+4. **Low-level controllers**: Execute precise motor commands
+
+### Control Hierarchy
+
+```
+Task Planner → Motion Planner → Balance Controller → Trajectory Generator → Joint Controllers
+```
+
+## Practical Labs / Simulations
+
+### Lab 2.1: Humanoid Robot Models
+- **Requirements**: Gazebo simulation environment, ROS 2 installation
+- **Tools**: Gazebo, ROS 2
+- **Complexity**: Beginner
+- **Steps**:
+  1. Load different humanoid robot models in Gazebo
+  2. Examine joint configurations and degrees of freedom
+  3. Visualize robot kinematics and workspace
+- **Expected Outcome**: Student can identify key components and configurations of humanoid robots
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain the advantages of humanoid form factor for operating in human environments"
+- "What are the main challenges in humanoid robot locomotion?"
+
+### Debugging Prompts
+- "How do you handle balance recovery when a humanoid robot is disturbed?"
+- "What are common failure modes in humanoid robot walking?"
+
+### "Explain-this-system" Prompts
+- "Explain how humanoid robots maintain balance during walking"
+- "Describe the control hierarchy in humanoid robot systems"
+
+## Summary & Readiness Check
+
+- Humanoid robots have human-like form factors optimized for human environments
+- They typically have 20-40+ degrees of freedom distributed across body parts
+- Compliance mechanisms ensure safe interaction with environment and humans
+- Control hierarchy manages task planning, balance, and precise motor control
+
+### Capstone Relevance
+
+Understanding humanoid robot design and control principles is essential for developing autonomous humanoid systems for the capstone project.

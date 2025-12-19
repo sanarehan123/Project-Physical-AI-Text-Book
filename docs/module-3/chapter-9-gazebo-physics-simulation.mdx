@@ -1,0 +1,118 @@
+---
+title: Chapter 9 - Gazebo & Physics Simulation
+---
+
+# Chapter 9: Gazebo & Physics Simulation
+
+## Learning Objectives
+
+- Understand gravity, collisions, and rigid-body dynamics in Gazebo
+- Configure sensor simulation (LiDAR, depth, IMU) in Gazebo
+- Create realistic simulation environments for robot testing
+
+## Conceptual Foundations
+
+Gazebo is a 3D simulation environment that provides realistic physics simulation for robotics applications. It enables testing of robot algorithms and behaviors in a safe, controlled environment before deployment on real hardware.
+
+### Physics Simulation
+
+#### Rigid-Body Dynamics
+- **Newtonian physics**: Implementation of classical mechanics laws
+- **Collision detection**: Algorithms for detecting and responding to contacts
+- **Joint constraints**: Modeling different types of mechanical joints
+- **Contact models**: Handling friction, restitution, and contact forces
+
+#### Gravity and Environment
+- **Gravitational forces**: Realistic gravity simulation for all objects
+- **Environmental properties**: Air resistance, fluid dynamics (optional)
+- **Terrain modeling**: Creating realistic ground surfaces and obstacles
+- **Multi-body interactions**: Complex interactions between multiple objects
+
+### Sensor Simulation
+
+#### LiDAR Simulation
+- **Ray tracing**: Accurate modeling of laser range finding
+- **Noise modeling**: Adding realistic sensor noise and artifacts
+- **Resolution effects**: Modeling the impact of sensor resolution
+- **Update rates**: Configuring sensor refresh rates to match real hardware
+
+#### Depth Camera Simulation
+- **Stereo vision**: Simulating stereo depth perception
+- **Depth accuracy**: Modeling depth measurement errors
+- **Field of view**: Configuring camera parameters to match real sensors
+- **Occlusion handling**: Proper handling of depth occlusions
+
+#### IMU Simulation
+- **Acceleration modeling**: Simulating linear and angular acceleration
+- **Noise characteristics**: Adding realistic sensor noise patterns
+- **Bias and drift**: Modeling long-term sensor behavior
+- **Mounting orientation**: Configuring sensor frame transformations
+
+### Simulation Fidelity
+
+#### Accuracy Considerations
+- **Model simplification**: Balancing accuracy with computational efficiency
+- **Parameter tuning**: Calibrating simulation parameters to match reality
+- **Validation methods**: Techniques for verifying simulation accuracy
+- **Limitations awareness**: Understanding what cannot be accurately simulated
+
+#### Performance Optimization
+- **Collision simplification**: Using simpler collision models for efficiency
+- **Update rate management**: Optimizing physics update frequencies
+- **Level of detail**: Adjusting detail based on importance and distance
+- **Resource allocation**: Managing CPU and GPU usage for optimal performance
+
+## System Architecture
+
+Gazebo integrates with ROS 2 through the Gazebo ROS 2 packages:
+
+```
+ROS 2 Nodes ←→ Gazebo ROS 2 Bridge ←→ Gazebo Physics Engine ←→ Sensor Plugins
+     ↓                ↓                       ↓                    ↓
+  Robot Control   Message Translation   Physics Simulation   Sensor Simulation
+  Algorithms      & Parameter Server    & Collision Detection   & Data Generation
+```
+
+### Key Components
+- **Gazebo ROS 2 Bridge**: Translates between ROS 2 messages and Gazebo
+- **Sensor plugins**: Simulate various sensor types
+- **Controller plugins**: Interface with robot control systems
+- **World models**: Define simulation environments and objects
+
+## Practical Labs / Simulations
+
+### Lab 9.1: Gazebo Physics Simulation Setup
+- **Requirements**: Gazebo Garden, ROS 2 installation, robot model files
+- **Tools**: Gazebo, ROS 2, robot models
+- **Complexity**: Intermediate
+- **Steps**:
+  1. Install and configure Gazebo with ROS 2 bridge
+  2. Load a robot model in Gazebo
+  3. Configure physics properties and sensor simulation
+  4. Test basic robot movement and sensor responses
+- **Expected Outcome**: Student can set up and run physics simulations with sensor feedback
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain how Gazebo simulates realistic physics for robotics"
+- "What are the key considerations for accurate sensor simulation?"
+
+### Debugging Prompts
+- "How do you troubleshoot physics simulation instabilities in Gazebo?"
+- "What are common issues with sensor simulation accuracy?"
+
+### "Explain-this-system" Prompts
+- "Explain how Gazebo integrates with ROS 2 for robot simulation"
+- "Describe the architecture of physics simulation in Gazebo"
+
+## Summary & Readiness Check
+
+- Gazebo provides realistic physics simulation for robot testing
+- Sensor simulation includes LiDAR, cameras, IMUs, and other sensor types
+- Physics parameters and sensor models must be carefully configured for accuracy
+- Simulation enables safe, efficient robot development and testing
+
+### Capstone Relevance
+
+Gazebo physics simulation is essential for developing and testing autonomous humanoid robots safely before real-world deployment in the capstone project.

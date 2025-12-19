@@ -1,0 +1,112 @@
+---
+title: Chapter 8 - ROS 2 Systems Engineering
+---
+
+# Chapter 8: ROS 2 Systems Engineering
+
+## Learning Objectives
+
+- Configure launch files and parameters for complex robot systems
+- Implement namespaces and modular design principles
+- Use debugging and observability tools for ROS 2 systems
+
+## Conceptual Foundations
+
+ROS 2 systems engineering involves the practices and tools for building, configuring, and maintaining complex robotic systems. This includes managing multiple nodes, configuring parameters, organizing code for maintainability, and ensuring system reliability.
+
+### Launch Files
+
+#### Composition and Organization
+- **Launch files**: Python scripts that start multiple nodes together
+- **Node composition**: Combining multiple nodes into single processes
+- **Conditional launching**: Starting nodes based on parameters or conditions
+- **Remapping**: Redirecting topic and service names
+
+#### Launch Arguments
+- **Parameter passing**: Configuring nodes through launch-time arguments
+- **Default values**: Providing fallback configurations
+- **Validation**: Ensuring valid parameter combinations
+- **Environment variables**: Using system environment in launch files
+
+### Parameter Management
+
+#### Parameter Server
+- **Centralized storage**: Shared parameters across nodes
+- **YAML configuration**: Human-readable parameter files
+- **Namespace organization**: Grouping related parameters
+- **Dynamic reconfiguration**: Changing parameters at runtime
+
+#### Parameter Best Practices
+- **Modularity**: Organizing parameters by function or subsystem
+- **Validation**: Ensuring parameter values are within acceptable ranges
+- **Documentation**: Describing parameter meanings and valid ranges
+- **Versioning**: Tracking parameter changes over time
+
+### Namespaces and Modularity
+
+#### Namespacing Concepts
+- **Node namespaces**: Organizing nodes in hierarchical namespaces
+- **Topic remapping**: Redirecting topic names for modularity
+- **Service organization**: Grouping related services logically
+- **Resource management**: Avoiding naming conflicts in multi-robot systems
+
+#### Modular Design
+- **Component separation**: Dividing functionality into independent modules
+- **Interface definition**: Clear contracts between modules
+- **Reusability**: Designing modules for multiple applications
+- **Testing isolation**: Testing modules independently
+
+## System Architecture
+
+ROS 2 systems follow a layered architecture:
+
+```
+Application Layer → ROS 2 Client Library → DDS Middleware → Hardware Layer
+      ↓                     ↓                    ↓             ↓
+   Mission Logic      Node Management      Data Transfer   Device Drivers
+   & Coordination     & Communication      & Discovery     & Control
+```
+
+### Key Engineering Principles
+- **Separation of concerns**: Each node has a single responsibility
+- **Loose coupling**: Nodes communicate through well-defined interfaces
+- **High cohesion**: Related functionality grouped within nodes
+- **Fault tolerance**: System continues operating when individual nodes fail
+
+## Practical Labs / Simulations
+
+### Lab 8.1: ROS 2 System Engineering Practice
+- **Requirements**: ROS 2 installation, multiple nodes to configure
+- **Tools**: ROS 2, launch files, parameter files, rqt tools
+- **Complexity**: Intermediate
+- **Steps**:
+  1. Create a complex robot system with multiple nodes
+  2. Write launch files to start the system
+  3. Configure parameters using YAML files
+  4. Use rqt tools for system monitoring and debugging
+- **Expected Outcome**: Student can configure and launch complex ROS 2 systems
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain how launch files help organize complex ROS 2 systems"
+- "What are best practices for parameter management in ROS 2?"
+
+### Debugging Prompts
+- "How do you debug communication issues in multi-node ROS 2 systems?"
+- "What tools are available for monitoring ROS 2 system performance?"
+
+### "Explain-this-system" Prompts
+- "Explain the role of namespaces in organizing large ROS 2 systems"
+- "Describe the architecture of a well-engineered ROS 2 system"
+
+## Summary & Readiness Check
+
+- Launch files enable coordinated startup of complex robot systems
+- Parameter management provides centralized configuration
+- Namespaces and modularity enable scalable system design
+- Systems engineering practices ensure maintainable and reliable robot software
+
+### Capstone Relevance
+
+ROS 2 systems engineering practices are essential for building the complex, multi-component autonomous humanoid systems required for the capstone project.

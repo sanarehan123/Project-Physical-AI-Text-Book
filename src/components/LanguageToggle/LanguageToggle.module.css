@@ -1,0 +1,101 @@
+.languageToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.translateButton {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.translateButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.translateButton:active {
+  transform: translateY(0);
+}
+
+.translateButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.translateButton.active {
+  background: linear-gradient(135deg, var(--ifm-color-success), var(--ifm-color-primary));
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progressText {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+/* Urdu text styling */
+.urdu-text {
+  font-family: 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .languageToggle {
+    top: 10px;
+    right: 10px;
+  }
+
+  .translateButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Adjust for RTL layout when in Urdu mode */
+.urdu-mode {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Hide certain elements during translation */
+.translating {
+  opacity: 0.7;
+  pointer-events: none;
+}
