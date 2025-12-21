@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+rag-backend/node_modules/
+
+# Environment variables
+rag-backend/.env
+
+# Build outputs
+build/
+dist/
+.next/
+.nuxt/
+out/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docusaurus
+.cache/
+.docusaurus/
+.temp/
+
+# Backend Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.venv/
+
+# Sensitive files
+.env*
+!.env.example
+config/
+secrets/
+creds.json

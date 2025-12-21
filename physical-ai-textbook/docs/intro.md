@@ -21,4 +21,12 @@ Begin your journey by exploring the modules in sequence, starting with the funda
 
 Each module contains comprehensive chapters with practical examples, code samples, and hands-on exercises to reinforce your learning.
 
+## AI Assistant
+
+This textbook includes an AI-powered chatbot to help you learn and understand the concepts better. You can:
+
+- Ask general questions about the book content using the chat widget in the bottom-right corner
+- Highlight any text on the page and click the "Ask AI" button that appears to get explanations focused on that specific content
+- Get accurate, grounded answers based on the textbook content
+
 [Get Started with the Textbook](/docs/intro)
