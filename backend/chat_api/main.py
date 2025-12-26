@@ -7,7 +7,7 @@ T011: Add CORS middleware to FastAPI app to allow GitHub Pages domain
 """
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from .models import ChatRequest, ChatResponse, HealthResponse
+from .models import ChatRequest, ChatResponse, HealthResponse, RAGRequest
 from .config import Config
 from .services.chat_service import ChatService
 from .dependencies import validate_question, validate_context
@@ -83,16 +83,16 @@ async def chat_endpoint(request: ChatRequest):
 
 
 @app.post("/rag", response_model=ChatResponse)
-async def rag_endpoint(request: ChatRequest):
+async def rag_endpoint(request: RAGRequest):
     """
-    RAG endpoint that accepts a query and optional context, then returns an answer with sources
+    RAG endpoint that accepts a query and optional source_url, then returns an answer with sources
     """
     try:
-        # Validate inputs using dependencies
-        validated_question = validate_question(request.question)
-        validated_context = validate_context(request.context)
+        # Validate inputs
+        validated_question = validate_question(request.query)
+        validated_context = validate_context(request.source_url) if request.source_url else None
 
-        # Process the RAG request using the chat service (same as chat)
+        # Process the RAG request using the chat service
         result = ChatService.process_chat_request(validated_question, validated_context)
 
         # Return the response in the expected format

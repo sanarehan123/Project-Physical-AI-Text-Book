@@ -14,6 +14,14 @@ class ChatRequest(BaseModel):
     context: Optional[str] = Field(None, max_length=5000, description="Optional additional context for the question")
 
 
+class RAGRequest(BaseModel):
+    """
+    Request model for RAG endpoint - accepts format from frontend
+    """
+    query: str = Field(..., min_length=1, max_length=2000, description="The user's query/question to be answered")
+    source_url: Optional[str] = Field(None, description="Source URL for context")
+
+
 class SourceReference(BaseModel):
     """
     Model for source reference in chat responses
