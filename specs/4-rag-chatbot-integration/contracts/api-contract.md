@@ -67,7 +67,7 @@ This document defines the API contract between the Docusaurus frontend and the F
           "type": "string",
           "format": "uri",
           "description": "URL to the source document",
-          "example": "https://project-physical-ai-text-book.vercel.app/docs/module-1/chapter-3"
+          "example": "https://project-physical-ai-text-book-updat.vercel.app/docs/module-1/chapter-3"
         },
         "text": {
           "type": "string",
@@ -80,7 +80,7 @@ This document defines the API contract between the Docusaurus frontend and the F
     "description": "List of sources used to generate the answer",
     "example": [
       {
-        "url": "https://project-physical-ai-text-book.vercel.app/docs/module-1/chapter-3",
+        "url": "https://project-physical-ai-text-book-updat.vercel.app/docs/module-1/chapter-3",
         "text": "Machine learning is a method of data analysis that automates analytical model building using algorithms..."
       }
     ]
@@ -94,11 +94,11 @@ This document defines the API contract between the Docusaurus frontend and the F
   "answer": "Machine learning is a subset of artificial intelligence that enables computers to learn and improve from experience without being explicitly programmed. It involves algorithms that can learn from and make predictions on data...",
   "sources": [
     {
-      "url": "https://project-physical-ai-text-book.vercel.app/docs/module-1/chapter-3",
+      "url": "https://project-physical-ai-text-book-updat.vercel.app/docs/module-1/chapter-3",
       "text": "Machine learning is a method of data analysis that automates analytical model building using algorithms..."
     },
     {
-      "url": "https://project-physical-ai-text-book.vercel.app/docs/module-4/chapter-12",
+      "url": "https://project-physical-ai-text-book-updat.vercel.app/docs/module-4/chapter-12",
       "text": "In the context of AI, machine learning algorithms build a model based on training data..."
     }
   ]

@@ -12,7 +12,7 @@ This innovative approach transforms static educational content into an interacti
 
 ## Live Links
 
-- **Book URL**: https://project-physical-ai-text-book.vercel.app/
+- **Book URL**: https://project-physical-ai-text-book-updat.vercel.app/
 - **GitHub Frontend**: https://github.com/sanarehan123/Project-Physical-AI-Text-Book
 - **Backend Code**: Included in rag-backend directory of the same repository
 - **Backend URL**: [Your deployed backend URL]

@@ -30,7 +30,7 @@
    COHERE_API_KEY=your_cohere_api_key_here
    QDRANT_URL=your_qdrant_cluster_url_here
    QDRANT_API_KEY=your_qdrant_api_key_here
-   BOOK_URL=https://project-physical-ai-text-book.vercel.app/
+   BOOK_URL=https://project-physical-ai-text-book-updat.vercel.app/
    COLLECTION_NAME=book_content
    ```
 
@@ -49,7 +49,7 @@ uv run python main.py
 uv run python main.py --verbose
 
 # Crawl a specific subpath
-uv run python main.py --base-url https://project-physical-ai-text-book.vercel.app/guide
+uv run python main.py --base-url https://project-physical-ai-text-book-updat.vercel.app/guide
 ```
 
 ## Project Structure

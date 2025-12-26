@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://project-physical-ai-text-book.vercel.app',
+  url: 'https://project-physical-ai-text-book-updat.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For Vercel deployment, use '/' for root, or adjust as needed
   baseUrl: '/',

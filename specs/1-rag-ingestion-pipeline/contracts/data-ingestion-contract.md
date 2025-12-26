@@ -7,7 +7,7 @@ This contract defines the data flow and interfaces for the RAG Chatbot Data Inge
 ## Data Flow Contract
 
 ### 1. Input Interface
-- **Source**: Web pages from BOOK_URL (https://project-physical-ai-text-book.vercel.app/)
+- **Source**: Web pages from BOOK_URL (https://project-physical-ai-text-book-updat.vercel.app/)
 - **Format**: HTML content
 - **Access Method**: Playwright browser automation
 - **Authentication**: None required (public site)

@@ -109,7 +109,7 @@ class RAGIngestionPipeline:
     def __init__(self):
         self.cohere_client = None
         self.qdrant_client = None
-        self.book_url = os.getenv("BOOK_URL", "https://project-physical-ai-text-book.vercel.app/")
+        self.book_url = os.getenv("BOOK_URL", "https://project-physical-ai-text-book-updat.vercel.app/")
         self.collection_name = os.getenv("COLLECTION_NAME", "book_chunks")  # Changed to match retrieve.py expectation
         self.chunk_size = int(os.getenv("CHUNK_SIZE", "500"))
         self.chunk_overlap = int(os.getenv("CHUNK_OVERLAP", "50"))

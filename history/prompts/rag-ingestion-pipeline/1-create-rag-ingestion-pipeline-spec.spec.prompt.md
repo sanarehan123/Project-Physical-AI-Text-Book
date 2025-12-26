@@ -65,7 +65,7 @@ Not building:
 
 For any reference you might need, i am providing you:
 My github project link is this: https://github.com/sanarehan123/Project-Physical-AI-Text-Book
-My vercel deployment URL is this: https://project-physical-ai-text-book.vercel.app/
+My vercel deployment URL is this: https://project-physical-ai-text-book-updat.vercel.app/
 ```
 
 ## RESPONSE TEXT

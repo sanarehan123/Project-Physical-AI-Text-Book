@@ -40,7 +40,7 @@ Not building:
 
 For any reference you might need, i am providing you:
 My github project link is this: https://github.com/sanarehan123/Project-Physical-AI-Text-Book
-My vercel deployment URL is this: https://project-physical-ai-text-book.vercel.app/"
+My vercel deployment URL is this: https://project-physical-ai-text-book-updat.vercel.app/"
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -116,7 +116,7 @@ As a developer, I want the ingestion process to be idempotent and handle failure
 
 ### Functional Requirements
 
-- **FR-001**: System MUST crawl all accessible pages from the deployed book URL (https://project-physical-ai-text-book.vercel.app/)
+- **FR-001**: System MUST crawl all accessible pages from the deployed book URL (https://project-physical-ai-text-book-updat.vercel.app/)
 - **FR-002**: System MUST extract clean textual content (title, headings, paragraphs, code blocks) while removing navigation, footer, and other UI noise
 - **FR-003**: System MUST generate embeddings using the Cohere embed model with latest suitable version
 - **FR-004**: System MUST store embeddings and metadata (URL, chunk text, title, section) in a Qdrant collection

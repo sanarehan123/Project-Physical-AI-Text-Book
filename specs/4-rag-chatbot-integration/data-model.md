@@ -57,7 +57,7 @@
 **Example**:
 ```json
 {
-  "url": "https://project-physical-ai-text-book.vercel.app/docs/module-1/chapter-3",
+  "url": "https://project-physical-ai-text-book-updat.vercel.app/docs/module-1/chapter-3",
   "text": "The principle of least action is a variational principle that, when applied to the action of a mechanical system, can be used to obtain the equations of motion for that system."
 }
 ```
