@@ -1,0 +1,69 @@
+.features {
+  padding: 4rem 0;
+  width: 100%;
+  background: linear-gradient(135deg, var(--ifm-color-emphasis-100) 0%, var(--ifm-color-emphasis-200) 100%);
+  border-radius: var(--ifm-global-radius);
+  margin: 2rem 0;
+}
+
+.featureSvg {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.featureSvg:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card {
+  background: white;
+  border-radius: var(--ifm-global-radius);
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: var(--ifm-global-shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--ifm-color-primary);
+}
+
+.feature-card h3 {
+  color: var(--ifm-color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.feature-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  border-radius: 2px;
+}
+
+.feature-card p {
+  color: var(--ifm-color-gray-600);
+  line-height: 1.6;
+}
+
+[data-theme='dark'] .feature-card {
+  background: var(--ifm-color-gray-800);
+  border-color: var(--ifm-color-gray-700);
+}
+
+[data-theme='dark'] .feature-card p {
+  color: var(--ifm-color-gray-300);
+}

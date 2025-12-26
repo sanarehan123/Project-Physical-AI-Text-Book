@@ -1,0 +1,137 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-secondary) 100%) !important;
+  color: white !important;
+  border-radius: var(--ifm-global-radius);
+  margin-bottom: 2rem;
+  box-shadow: var(--ifm-global-shadow);
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.heroText {
+  flex: 1;
+  text-align: left;
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImg {
+  max-width: 100%;
+  max-height: 200px;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+  border-radius: var(--ifm-global-radius);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.highlightCard {
+  background: white;
+  border-radius: var(--ifm-global-radius);
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: var(--ifm-global-shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.highlightCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--ifm-color-primary);
+}
+
+.highlightCard h3 {
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlightCard h3::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--ifm-color-primary);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.highlightCard p {
+  color: var(--ifm-color-gray-600);
+  line-height: 1.6;
+}
+
+.highlights {
+  padding: 4rem 0;
+}
+
+[data-theme='dark'] .highlightCard {
+  background: var(--ifm-color-gray-800);
+  border-color: var(--ifm-color-gray-700);
+}
+
+[data-theme='dark'] .highlightCard p {
+  color: var(--ifm-color-gray-300);
+}
+
+@media screen and (max-width: 996px) {
+  .heroContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroText {
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}

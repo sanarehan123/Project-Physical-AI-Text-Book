@@ -1,0 +1,110 @@
+---
+title: Chapter 6 - Python Agents with ROS 2
+---
+
+# Chapter 6: Python Agents with ROS 2
+
+## Learning Objectives
+
+- Use rclpy fundamentals to create Python-based ROS 2 nodes
+- Bridge AI agents to robot controllers using ROS 2
+- Implement event-driven vs reactive control patterns
+
+## Conceptual Foundations
+
+Python agents in ROS 2 leverage the rclpy library to create intelligent systems that can communicate with robot hardware and other software components. This chapter covers how to build AI agents that can interface with the physical world through ROS 2.
+
+### rclpy Fundamentals
+
+#### Node Creation
+- **Node class**: Base class for creating ROS 2 nodes in Python
+- **Initialization**: Setting up the node with proper lifecycle management
+- **Spin functions**: Processing callbacks and maintaining node operation
+
+#### Publishers and Subscribers
+- **Publisher**: Sending messages to topics
+- **Subscriber**: Receiving messages from topics with callback functions
+- **Message types**: Standardized message formats defined in .msg files
+
+#### Services and Actions
+- **Service client/server**: Request-response pattern implementation
+- **Action client/server**: Long-running operations with feedback
+- **Future handling**: Managing asynchronous operations
+
+### AI Agent Integration
+
+#### Bridging AI and Robotics
+- **Perception integration**: Connecting AI perception modules to sensor data
+- **Planning integration**: Using AI planners with ROS 2 action interfaces
+- **Control integration**: Translating AI decisions to robot commands
+
+#### Communication Patterns
+- **Synchronous vs asynchronous**: When to use each pattern
+- **Message queuing**: Handling bursty or high-frequency data
+- **Error handling**: Robust communication between AI and robot systems
+
+### Control Patterns
+
+#### Event-Driven Control
+- **Event detection**: Responding to specific sensor events or conditions
+- **State machines**: Implementing complex behaviors as state transitions
+- **Callback design**: Efficient and responsive callback functions
+
+#### Reactive Control
+- **Sensor feedback**: Immediate response to sensor inputs
+- **Safety responses**: Emergency reactions to dangerous conditions
+- **Behavior trees**: Hierarchical organization of reactive behaviors
+
+## System Architecture
+
+Python agents typically follow this architecture:
+
+```
+AI Logic Layer ── ROS 2 Interface Layer ── Robot Hardware Layer
+     ↓                    ↓                      ↓
+  Decision    ── ROS 2 ── Commands    ── Actuator
+  Making       Messages    Execution              Control
+```
+
+### Integration Points
+- **Input**: Sensor data, user commands, system state
+- **Processing**: AI decision making, planning, reasoning
+- **Output**: Robot commands, system updates, feedback
+
+## Practical Labs / Simulations
+
+### Lab 6.1: Python AI Agent with ROS 2
+- **Requirements**: ROS 2 installation, Python 3.8+, basic AI knowledge
+- **Tools**: ROS 2, Python, rclpy, Gazebo
+- **Complexity**: Intermediate
+- **Steps**:
+  1. Create a Python node that subscribes to sensor data
+  2. Implement basic AI decision-making logic
+  3. Publish commands to control a simulated robot
+  4. Test the AI agent in a simple navigation task
+- **Expected Outcome**: Student can create a Python AI agent that controls a robot through ROS 2
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain how to bridge AI agents with ROS 2 robot controllers"
+- "What are the differences between event-driven and reactive control?"
+
+### Debugging Prompts
+- "How do you handle communication failures between AI agents and robot systems?"
+- "What are common threading issues in Python ROS 2 nodes?"
+
+### "Explain-this-system" Prompts
+- "Explain the architecture of a Python-based AI agent in ROS 2"
+- "Describe how message queuing works in Python ROS 2 implementations"
+
+## Summary & Readiness Check
+
+- rclpy enables Python-based ROS 2 node development
+- AI agents can be integrated with robot systems through ROS 2 interfaces
+- Event-driven and reactive control patterns provide different approaches to robot behavior
+- Proper error handling and communication patterns are essential for robust systems
+
+### Capstone Relevance
+
+Python agents with ROS 2 form the foundation for implementing AI control systems in autonomous humanoid robots for the capstone project.

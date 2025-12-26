@@ -1,0 +1,113 @@
+---
+title: Chapter 15 - Vision-Language-Action (VLA)
+---
+
+# Chapter 15: Vision-Language-Action (VLA)
+
+## Learning Objectives
+
+- Design cognitive planning systems with LLMs for humanoid robots
+- Implement task decomposition and execution pipelines
+- Handle failure detection and recovery in VLA systems
+
+## Conceptual Foundations
+
+Vision-Language-Action (VLA) systems integrate perception, language understanding, and physical action to enable robots to understand and execute complex tasks based on natural language instructions. This represents the cutting edge of embodied AI.
+
+### Cognitive Planning with LLMs
+
+#### Large Language Models for Robotics
+- **Embodied reasoning**: LLMs that understand physical world constraints
+- **Chain-of-thought reasoning**: Multi-step planning and reasoning
+- **Tool use**: LLMs that can control robotic tools and systems
+- **Context awareness**: Understanding robot state and environment
+
+#### Task Decomposition
+- **Hierarchical planning**: Breaking complex tasks into subtasks
+- **Dependency analysis**: Understanding task ordering and requirements
+- **Resource allocation**: Managing robot capabilities and constraints
+- **Temporal reasoning**: Planning with time and duration constraints
+
+### Vision-Language Integration
+
+#### Multimodal Understanding
+- **Visual grounding**: Connecting language concepts to visual elements
+- **Referring expression**: Understanding "the red box on the left"
+- **Spatial reasoning**: Understanding spatial relationships and directions
+- **Dynamic scene understanding**: Tracking changes over time
+
+#### Action Grounding
+- **Motor planning**: Converting high-level goals to low-level motor commands
+- **Embodied simulation**: Imagining the effects of actions before execution
+- **Safety constraints**: Ensuring actions are safe for robot and environment
+- **Failure prediction**: Anticipating potential issues with planned actions
+
+### Failure Handling and Recovery
+
+#### Failure Detection
+- **Execution monitoring**: Tracking action success/failure in real-time
+- **Sensor validation**: Using sensors to verify action outcomes
+- **Plan deviation detection**: Identifying when execution diverges from plan
+- **Uncertainty quantification**: Measuring confidence in action outcomes
+
+#### Recovery Strategies
+- **Plan repair**: Modifying plans when actions fail
+- **Alternative approaches**: Switching to different strategies
+- **Human assistance**: Requesting help when autonomous recovery fails
+- **Safe failure mode**: Ensuring robot safety during failures
+
+## System Architecture
+
+VLA system architecture:
+
+```
+Language Input → Multimodal LLM → Task Planner → Action Executor → Robot Control
+       ↓              ↓              ↓             ↓              ↓
+   Natural     Vision-Language   Task Graph    ROS Actions   Physical
+   Commands    Understanding    Decomposition   Execution     Execution
+```
+
+### Integration Components
+- **Perception module**: Processing visual and other sensory inputs
+- **Language module**: Processing and understanding natural language
+- **Planning module**: Creating executable action sequences
+- **Execution module**: Managing action execution and monitoring
+- **Memory module**: Maintaining context and learning from experience
+
+## Practical Labs / Simulations
+
+### Lab 15.1: Vision-Language-Action Pipeline
+- **Requirements**: Camera, microphone, LLM access, ROS 2, simulated robot
+- **Tools**: ROS 2, Vision models, LLM API, Gazebo simulation
+- **Complexity**: Advanced
+- **Steps**:
+  1. Set up multimodal perception system (vision + language)
+  2. Implement LLM-based task planning pipeline
+  3. Connect planner to robot action execution system
+  4. Test complex task execution with natural language commands
+- **Expected Outcome**: Student can implement a complete VLA pipeline that executes complex tasks from language instructions
+
+## AI-Agent Interaction Prompts
+
+### Tutor Prompts
+- "Explain how Vision-Language-Action systems integrate perception and action"
+- "What are the key challenges in VLA system implementation?"
+
+### Debugging Prompts
+- "How do you handle failures in VLA system execution?"
+- "What are common issues with multimodal integration in robotics?"
+
+### "Explain-this-system" Prompts
+- "Explain the architecture of a Vision-Language-Action system"
+- "Describe how LLMs enable complex task execution in robotics"
+
+## Summary & Readiness Check
+
+- VLA systems integrate vision, language, and action for complex task execution
+- Cognitive planning with LLMs enables high-level task decomposition
+- Vision-language integration connects language concepts to visual world
+- Failure handling ensures robust operation in real-world scenarios
+
+### Capstone Relevance
+
+VLA systems represent the pinnacle of autonomous humanoid capabilities needed for the capstone project.

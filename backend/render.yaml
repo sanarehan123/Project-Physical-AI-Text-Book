@@ -1,0 +1,42 @@
+# Deploy to Render
+
+This is a template for deploying the RAG Chatbot API backend to Render.
+
+## Prerequisites
+
+- A Render account (https://render.com)
+- Your API keys ready:
+  - GEMINI_API_KEY
+  - COHERE_API_KEY
+  - QDRANT_URL
+  - QDRANT_API_KEY
+
+## Deployment Steps
+
+1. Fork this repository to your GitHub account
+2. Create a new Web Service on Render
+3. Connect to your forked repository
+4. Use the following settings:
+
+**Build:**
+- Environment: Python
+- Build Command: `pip install -r backend/requirements.txt`
+- Start Command: `cd backend && uvicorn chat_api.main:app --host 0.0.0.0 --port $PORT`
+
+**Environment Variables:**
+Add the following environment variables:
+- GEMINI_API_KEY
+- COHERE_API_KEY
+- QDRANT_URL
+- QDRANT_API_KEY
+- QDRANT_COLLECTION_NAME (optional, defaults to "book_chunks")
+
+**Region:** Select your preferred region
+
+5. Click "Create Web Service"
+
+## Notes
+
+- The free tier on Render should be sufficient for development and low usage
+- For higher traffic, consider upgrading to a starter or standard instance
+- Monitor your API usage to stay within free tier limits
