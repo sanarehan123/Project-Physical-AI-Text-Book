@@ -36,8 +36,8 @@ class ChatService:
             logger.info(f"Processing question: {question[:100]}...")
             query_embedding = embed_query(question)
 
-            # Retrieve relevant chunks from vector database
-            retrieved_chunks = retrieve_chunks(query_embedding, top_k=3)
+            # Retrieve relevant chunks from vector database with higher top_k for better coverage
+            retrieved_chunks = retrieve_chunks(query_embedding, top_k=10)
 
             # Generate response using the retrieved context
             response = generate_response(question, retrieved_chunks, context)

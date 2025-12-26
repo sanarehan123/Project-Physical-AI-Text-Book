@@ -17,9 +17,7 @@ const ChatWidget = () => {
 
   // Backend API URL - Updated for your Railway deployment
   // For local development, use localhost
-  const BACKEND_URL = process.env.NODE_ENV === 'production'
-    ? 'https://project-physical-ai-text-book-production.up.railway.app'
-    : 'http://127.0.0.1:8000';
+  const BACKEND_URL = 'http://127.0.0.1:8002';
 
   // Scroll to bottom of messages
   const scrollToBottom = () => {
@@ -213,12 +211,12 @@ const ChatWidget = () => {
                           {message.sources.map((source, index) => (
                             <a
                               key={index}
-                              href={source.startsWith('http') ? source : `/${source}`}
+                              href={typeof source === 'object' && source.url ? (source.url.startsWith('http') ? source.url : `/${source.url}`) : (typeof source === 'string' ? (source.startsWith('http') ? source : `/${source}`) : '#')}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="source-link"
                             >
-                              {source}
+                              {typeof source === 'object' && source.url ? source.url : (typeof source === 'string' ? source : 'Source')}
                             </a>
                           ))}
                         </div>

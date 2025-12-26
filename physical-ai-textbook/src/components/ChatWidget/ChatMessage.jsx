@@ -35,12 +35,14 @@ const ChatMessage = ({ message }) => {
             {sources.map((source, index) => (
               <li key={index}>
                 <a
-                  href={source.url}
+                  href={source && typeof source === 'object' && source.url ? source.url : '#'}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {source.text.substring(0, 100)}{source.text.length > 100 ? '...' : ''}
+                  {source && typeof source === 'object' && typeof source.text === 'string' ?
+                    source.text.substring(0, 100) + (source.text.length > 100 ? '...' : '') :
+                    (source && typeof source === 'object' && source.url ? source.url : 'Source')}
                 </a>
               </li>
             ))}

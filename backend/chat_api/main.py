@@ -27,6 +27,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",      # Local Docusaurus development
         "http://localhost:3001",      # Alternative local dev port
+        "http://127.0.0.1:3000",      # Local Docusaurus development with 127.0.0.1
+        "http://127.0.0.1:3001",      # Alternative local dev port with 127.0.0.1
         "https://*.vercel.app",       # Vercel deployments
         "https://*.github.io",        # GitHub Pages
         "https://*.netlify.app",      # Netlify deployments
@@ -119,4 +121,4 @@ except ValueError as e:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8002)

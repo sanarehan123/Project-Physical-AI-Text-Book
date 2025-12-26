@@ -27,7 +27,7 @@ const ChatWidget = () => {
   }, [messages]);
 
   // Get backend URL from environment variable or default to localhost
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+  const BACKEND_URL = 'http://127.0.0.1:8002';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -81,9 +81,10 @@ const ChatWidget = () => {
 
     } catch (err) {
       console.error('Error in chat:', err);
+      console.error('Full error details:', err);
       setError(err.message || 'An error occurred while processing your request');
 
-      // Add error message to chat
+      // Add error message to chat with more specific information
       const errorMessage = {
         id: Date.now(),
         content: `Error: ${err.message || 'Failed to get response'}`,

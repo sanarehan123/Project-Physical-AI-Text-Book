@@ -4,6 +4,7 @@ T007: Create RAG service module in `backend/chat_api/services/rag_service.py` th
 """
 import os
 import logging
+import re
 from typing import List, Dict, Any, Optional
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
@@ -42,6 +43,51 @@ def connect_qdrant() -> QdrantClient:
         raise
 
 
+def expand_query(query_text: str) -> str:
+    """
+    Expand query to include synonyms and related terms to improve retrieval
+
+    Args:
+        query_text (str): Original query text
+
+    Returns:
+        str: Expanded query text
+    """
+    # Dictionary of common terms and their expansions in the context of the textbook
+    expansions = {
+        'humanoid robotics': 'humanoid robot OR robotics OR humanoid OR robots',
+        'humanoid robot': 'humanoid robotics OR robotics OR humanoid OR robots',
+        'physical ai': 'physical artificial intelligence OR embodied ai OR embodied artificial intelligence',
+        'ai': 'artificial intelligence',
+        'constraints': 'constraints OR limitations OR challenges OR restrictions',
+        'gaps': 'gaps OR limitations OR challenges OR differences',
+        'reality': 'reality OR real world OR practical OR actual',
+        'simulation': 'simulation OR simulated OR modeling OR model',
+        'physics': 'physics OR physical laws OR physical constraints',
+        'dynamics': 'dynamics OR dynamic systems OR motion OR movement',
+        'kinematics': 'kinematics OR motion OR movement OR positioning',
+        'control': 'control OR controller OR controlling OR regulation',
+        'locomotion': 'locomotion OR walking OR movement OR gait OR mobility',
+        'balance': 'balance OR stability OR equilibrium OR posture',
+        'sensors': 'sensors OR sensing OR perception OR sensor',
+        'actuators': 'actuators OR motors OR actuation OR motor',
+        'embodiment': 'embodiment OR embodied OR physical form OR physical body',
+    }
+
+    expanded_query = query_text.lower()
+
+    # Apply expansions
+    for term, expansion in expansions.items():
+        if term in expanded_query:
+            expanded_query = expanded_query.replace(term, expansion)
+
+    # Combine original and expanded query
+    final_query = f"{query_text} {expanded_query}"
+
+    logger.info(f"Expanded query: '{query_text}' -> '{final_query}'")
+    return final_query
+
+
 def embed_query(query_text: str) -> List[float]:
     """
     Generate embedding vector for a text query using Cohere
@@ -53,9 +99,12 @@ def embed_query(query_text: str) -> List[float]:
         List[float]: Vector representation of the query
     """
     try:
+        # Expand the query to improve retrieval
+        expanded_query = expand_query(query_text)
+
         # Generate embedding using the same model as Spec 1
         response = co.embed(
-            texts=[query_text],
+            texts=[expanded_query],
             model="embed-english-v3.0",
             input_type="search_query"
         )
@@ -69,7 +118,7 @@ def embed_query(query_text: str) -> List[float]:
         raise
 
 
-def retrieve_chunks(query_embedding: List[float], top_k: int = 3) -> List[Dict[str, Any]]:
+def retrieve_chunks(query_embedding: List[float], top_k: int = 10) -> List[Dict[str, Any]]:
     """
     Perform vector search in Qdrant to find similar content
 
@@ -164,8 +213,10 @@ Context:
 Instructions:
 - Answer the question based only on the provided context
 - Include source citations in your response when referencing specific information
-- If the context doesn't contain information to answer the question, say so clearly
-- Be concise and accurate in your response"""
+- If partial information is found, summarize what is available and suggest related sections
+- Do not refuse to answer unless absolutely no relevant context exists
+- Be concise and accurate in your response
+- If the context contains related information but not the exact answer, provide what you can find"""
 
         # Create messages for the API
         messages = [

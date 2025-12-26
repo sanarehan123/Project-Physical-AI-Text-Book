@@ -111,8 +111,8 @@ class RAGIngestionPipeline:
         self.qdrant_client = None
         self.book_url = os.getenv("BOOK_URL", "https://project-physical-ai-text-book-updat.vercel.app/")
         self.collection_name = os.getenv("COLLECTION_NAME", "book_chunks")  # Changed to match retrieve.py expectation
-        self.chunk_size = int(os.getenv("CHUNK_SIZE", "500"))
-        self.chunk_overlap = int(os.getenv("CHUNK_OVERLAP", "50"))
+        self.chunk_size = int(os.getenv("CHUNK_SIZE", "350"))  # Smaller chunks for better context preservation
+        self.chunk_overlap = int(os.getenv("CHUNK_OVERLAP", "100"))  # Increased overlap to maintain context across chunks
         self.batch_size = int(os.getenv("BATCH_SIZE", "10"))
         self.rate_limit_delay = float(os.getenv("RATE_LIMIT_DELAY", "0.5"))  # seconds between requests
 

@@ -71,6 +71,51 @@ def connect_qdrant() -> QdrantClient:
         raise
 
 
+def expand_query(query_text: str) -> str:
+    """
+    Expand query to include synonyms and related terms to improve retrieval
+
+    Args:
+        query_text (str): Original query text
+
+    Returns:
+        str: Expanded query text
+    """
+    # Dictionary of common terms and their expansions in the context of the textbook
+    expansions = {
+        'humanoid robotics': 'humanoid robot OR robotics OR humanoid OR robots',
+        'humanoid robot': 'humanoid robotics OR robotics OR humanoid OR robots',
+        'physical ai': 'physical artificial intelligence OR embodied ai OR embodied artificial intelligence',
+        'ai': 'artificial intelligence',
+        'constraints': 'constraints OR limitations OR challenges OR restrictions',
+        'gaps': 'gaps OR limitations OR challenges OR differences',
+        'reality': 'reality OR real world OR practical OR actual',
+        'simulation': 'simulation OR simulated OR modeling OR model',
+        'physics': 'physics OR physical laws OR physical constraints',
+        'dynamics': 'dynamics OR dynamic systems OR motion OR movement',
+        'kinematics': 'kinematics OR motion OR movement OR positioning',
+        'control': 'control OR controller OR controlling OR regulation',
+        'locomotion': 'locomotion OR walking OR movement OR gait OR mobility',
+        'balance': 'balance OR stability OR equilibrium OR posture',
+        'sensors': 'sensors OR sensing OR perception OR sensor',
+        'actuators': 'actuators OR motors OR actuation OR motor',
+        'embodiment': 'embodiment OR embodied OR physical form OR physical body',
+    }
+
+    expanded_query = query_text.lower()
+
+    # Apply expansions
+    for term, expansion in expansions.items():
+        if term in expanded_query:
+            expanded_query = expanded_query.replace(term, expansion)
+
+    # Combine original and expanded query
+    final_query = f"{query_text} {expanded_query}"
+
+    logger.info(f"Expanded query: '{query_text}' -> '{final_query}'")
+    return final_query
+
+
 def embed_query(query_text: str) -> List[float]:
     """
     Generate embedding vector for a text query using Cohere
@@ -88,13 +133,16 @@ def embed_query(query_text: str) -> List[float]:
         raise
 
     try:
+        # Expand the query to improve retrieval
+        expanded_query = expand_query(query_text)
+
         # Initialize Cohere client
         co = cohere.Client(COHERE_API_KEY)
 
         # Generate embedding using the same model as Spec 1
         # Using embed-english-v3.0 as it's the latest recommended model
         response = co.embed(
-            texts=[query_text],
+            texts=[expanded_query],
             model="embed-english-v3.0",
             input_type="search_query"  # Using search_query type for better retrieval performance
         )
@@ -108,7 +156,7 @@ def embed_query(query_text: str) -> List[float]:
         raise
 
 
-def search(query_embedding: List[float], top_k: int = 5) -> List[Dict[str, Any]]:
+def search(query_embedding: List[float], top_k: int = 12) -> List[Dict[str, Any]]:
     """
     Perform vector search in Qdrant to find similar content
 
@@ -212,8 +260,8 @@ def retrieve_and_print(question: str) -> bool:
         # Generate embedding for the question
         query_embedding = embed_query(question)
 
-        # Perform search
-        results = search(query_embedding, top_k=5)  # Get top 5, but we'll focus on top 3
+        # Perform search with higher top_k for better coverage
+        results = search(query_embedding, top_k=12)  # Get top 12 for better coverage
 
         # Print results
         print_results(question, results[:3])  # Show top 3 results

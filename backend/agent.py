@@ -15,6 +15,7 @@ import os
 import argparse
 import logging
 import json
+import re
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 
@@ -83,6 +84,62 @@ def connect_qdrant() -> QdrantClient:
         raise
 
 
+def expand_query(query_text: str) -> str:
+    """
+    Expand query to include synonyms and related terms to improve retrieval
+
+    Args:
+        query_text (str): Original query text
+
+    Returns:
+        str: Expanded query text
+    """
+    # Dictionary of common terms and their expansions in the context of the textbook
+    expansions = {
+        'humanoid robotics': 'humanoid robot OR robotics OR humanoid OR robots',
+        'humanoid robot': 'humanoid robotics OR robotics OR humanoid OR robots',
+        'physical ai': 'physical artificial intelligence OR embodied ai OR embodied artificial intelligence',
+        'ai': 'artificial intelligence',
+        'constraints': 'constraints OR limitations OR challenges OR restrictions',
+        'gaps': 'gaps OR limitations OR challenges OR differences',
+        'reality': 'reality OR real world OR practical OR actual',
+        'simulation': 'simulation OR simulated OR modeling OR model',
+        'physics': 'physics OR physical laws OR physical constraints',
+        'dynamics': 'dynamics OR dynamic systems OR motion OR movement',
+        'kinematics': 'kinematics OR motion OR movement OR positioning',
+        'control': 'control OR controller OR controlling OR regulation',
+        'locomotion': 'locomotion OR walking OR movement OR gait OR mobility',
+        'balance': 'balance OR stability OR equilibrium OR posture',
+        'sensors': 'sensors OR sensing OR perception OR sensor',
+        'actuators': 'actuators OR motors OR actuation OR motor',
+        'embodiment': 'embodiment OR embodied OR physical form OR physical body',
+    }
+
+    # Handle "what are X" patterns
+    pattern = r"what are (\w+)"
+    match = re.search(pattern, query_text.lower())
+    if match:
+        term = match.group(1)
+        query_text = f"define {term} OR explain {term} OR what is {term} OR {term} description OR {query_text}"
+
+    # Handle general questions by appending book-specific terms
+    if not query_text.lower().startswith(('hi', 'hello', 'hey')):
+        query_text = f"{query_text} in humanoid robotics OR in physical ai OR in the textbook"
+
+    expanded_query = query_text.lower()
+
+    # Apply expansions
+    for term, expansion in expansions.items():
+        if term in expanded_query:
+            expanded_query = expanded_query.replace(term, expansion)
+
+    # Combine original and expanded query
+    final_query = f"{query_text} {expanded_query}"
+
+    logger.info(f"Expanded query: '{query_text}' -> '{final_query}'")
+    return final_query
+
+
 def embed_query(query_text: str) -> List[float]:
     """
     Generate embedding vector for a text query using Cohere
@@ -97,9 +154,12 @@ def embed_query(query_text: str) -> List[float]:
         # Initialize Cohere client
         co = cohere.Client(COHERE_API_KEY)
 
+        # Expand the query to improve retrieval
+        expanded_query = expand_query(query_text)
+
         # Generate embedding using the same model as Spec 1
         response = co.embed(
-            texts=[query_text],
+            texts=[expanded_query],
             model="embed-english-v3.0",
             input_type="search_query"
         )
@@ -113,7 +173,7 @@ def embed_query(query_text: str) -> List[float]:
         raise
 
 
-def retrieve_chunks(query_embedding: List[float], top_k: int = 3) -> List[Dict[str, Any]]:
+def retrieve_chunks(query_embedding: List[float], top_k: int = 10) -> List[Dict[str, Any]]:
     """
     Perform vector search in Qdrant to find similar content
 
@@ -135,20 +195,23 @@ def retrieve_chunks(query_embedding: List[float], top_k: int = 3) -> List[Dict[s
             with_payload=True,
         )
 
-        # Format results
+        # Format results with similarity threshold filtering
         formatted_results = []
+        min_score = 0.65  # Minimum similarity score threshold
         for result in search_results.points:
-            formatted_result = {
-                'content': result.payload.get('content', '') if result.payload else '',
-                'similarity_score': result.score,
-                'source_url': result.payload.get('source_url', '') if result.payload else '',
-                'title': result.payload.get('title', '') if result.payload else '',
-                'section': result.payload.get('section', '') if result.payload else '',
-                'chunk_id': result.id
-            }
-            formatted_results.append(formatted_result)
+            # Only include results that meet the minimum similarity threshold
+            if result.score >= min_score:
+                formatted_result = {
+                    'content': result.payload.get('content', '') if result.payload else '',
+                    'similarity_score': result.score,
+                    'source_url': result.payload.get('source_url', '') if result.payload else '',
+                    'title': result.payload.get('title', '') if result.payload else '',
+                    'section': result.payload.get('section', '') if result.payload else '',
+                    'chunk_id': result.id
+                }
+                formatted_results.append(formatted_result)
 
-        logger.info(f"Found {len(formatted_results)} results for the query")
+        logger.info(f"Found {len(formatted_results)} results for the query with similarity score >= {min_score}")
         return formatted_results
 
     except Exception as e:
@@ -209,8 +272,10 @@ Context:
 Instructions:
 - Answer the question based only on the provided context
 - Include source citations in your response when referencing specific information
-- If the context doesn't contain information to answer the question, say so clearly
-- Be concise and accurate in your response"""
+- If partial information is found, summarize what is available and suggest related sections
+- Do not refuse to answer unless absolutely no relevant context exists
+- Be concise and accurate in your response
+- If the context contains related information but not the exact answer, provide what you can find"""
 
         # Create messages for the API
         messages = [
@@ -289,8 +354,8 @@ def main():
         # Generate embedding for the question
         query_embedding = embed_query(args.question)
 
-        # Retrieve relevant chunks
-        retrieved_chunks = retrieve_chunks(query_embedding, top_k=3)
+        # Retrieve relevant chunks with higher top_k for better coverage
+        retrieved_chunks = retrieve_chunks(query_embedding, top_k=10)
 
         # Generate response using OpenAI
         response = generate_response(args.question, retrieved_chunks, args.context)
