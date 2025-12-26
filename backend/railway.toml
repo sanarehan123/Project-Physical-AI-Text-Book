@@ -1,0 +1,17 @@
+# T026: Railway deployment configuration
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+numReplicas = 1
+region = "us-east1"
+startCommand = "cd backend && uvicorn chat_api.main:app --host 0.0.0.0 --port $PORT"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[variables]
+  GEMINI_API_KEY = { required = true }
+  COHERE_API_KEY = { required = true }
+  QDRANT_URL = { required = true }
+  QDRANT_API_KEY = { required = true }
+  QDRANT_COLLECTION_NAME = { default = "book_chunks" }

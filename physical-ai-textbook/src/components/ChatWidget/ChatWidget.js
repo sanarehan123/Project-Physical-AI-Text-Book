@@ -15,8 +15,11 @@ const ChatWidget = () => {
   const inputRef = useRef(null);
   const chatPanelRef = useRef(null);
 
-  // Backend API URL - replace with your deployed backend URL
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://your-deployed-backend-url.com';
+  // Backend API URL - Updated for your Railway deployment
+  // For local development, use localhost
+  const BACKEND_URL = process.env.NODE_ENV === 'production'
+    ? 'https://project-physical-ai-text-book-production.up.railway.app'
+    : 'http://127.0.0.1:8000';
 
   // Scroll to bottom of messages
   const scrollToBottom = () => {
